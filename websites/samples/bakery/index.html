@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Juniper Lane Bakery | Concept design by Expert Insights</title>
+<meta name="description" content="A concept website design by Expert Insights for a custom bakery: online ordering, a custom cake builder with lead times, local delivery and pickup. Juniper Lane Bakery is a fictional business.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cocoa:#4A2C2A;--cocoa-d:#3A201E;--blush:#F4D6D2;--blush-d:#E9BCB6;--cream:#FFF8F1;--sage:#7E9C7C;--ink:#2B211F;--soft:#6E605C;--line:#EBDDD3;--wrap:1120px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--cream);font-size:16px;line-height:1.7}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;color:var(--cocoa);line-height:1.15;font-weight:700}
+h1{font-size:clamp(36px,5.4vw,60px)}
+h2{font-size:clamp(28px,3.4vw,40px)}
+h3{font-size:20px}
+.eyebrowless{color:var(--soft)}
+.demo-bar{background:var(--cocoa);color:#F6E7E2;font-size:14px;padding:9px 0;text-align:center}
+.demo-bar a{color:#fff;font-weight:600}
+header{background:var(--cream);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{font-family:'Playfair Display';font-weight:700;font-size:24px;color:var(--cocoa);text-decoration:none;letter-spacing:.01em}
+.logo small{display:block;font-family:'Inter';font-size:13px;color:var(--sage);font-weight:500;margin-top:-2px}
+.nav ul{list-style:none;display:flex;gap:26px;font-size:15px;font-weight:500}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{color:var(--sage)}
+.cartbtn{display:flex;align-items:center;gap:8px;background:var(--cocoa);color:#fff;border:0;border-radius:6px;padding:10px 18px;font:inherit;font-weight:600;cursor:pointer}
+.cartbtn span{background:var(--blush);color:var(--cocoa);border-radius:6px;padding:0 8px;font-size:13px}
+@media (max-width:820px){.nav ul{display:none}}
+.btn{display:inline-block;background:var(--cocoa);color:#fff;text-decoration:none;font-weight:600;border-radius:6px;padding:13px 24px;border:0;font:inherit;font-weight:600;cursor:pointer}
+.btn:hover{background:var(--cocoa-d)}
+.btn.light{background:transparent;color:var(--cocoa);border:1.5px solid var(--cocoa)}
+section{padding:76px 0}
+.hero{padding:40px 0 70px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero p.lead{font-size:18.5px;color:var(--soft);margin-top:18px;max-width:30em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.hero-img{border-radius:6px;overflow:hidden}
+.hero-img img{width:100%;height:500px;object-fit:cover}
+.facts{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;font-size:14.5px;color:var(--cocoa);font-weight:500}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-img img{height:340px}}
+.blush{background:var(--blush)}
+.center{text-align:center}
+.sub{color:var(--soft);margin-top:10px;max-width:40em}
+.center .sub{margin-inline:auto}
+.shop{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:38px}
+@media (max-width:960px){.shop{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.shop{grid-template-columns:1fr}}
+.prod{background:var(--cream);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.prod img{height:200px;width:100%;object-fit:cover}
+.prod .body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.prod .price{font-weight:600;color:var(--cocoa)}
+.prod .meta{font-size:13.5px;color:var(--soft);flex:1}
+.prod button{margin-top:8px;background:transparent;border:1.5px solid var(--cocoa);color:var(--cocoa);border-radius:6px;padding:9px;font:inherit;font-weight:600;cursor:pointer}
+.prod button:hover,.prod button.added{background:var(--cocoa);color:#fff}
+/* builder */
+.builder{display:grid;grid-template-columns:1.25fr .9fr;gap:30px;margin-top:36px;align-items:start}
+@media (max-width:900px){.builder{grid-template-columns:1fr}}
+.panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:26px}
+.step{margin-bottom:22px}
+.step h3{font-size:19px;margin-bottom:10px}
+.opts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:640px){.opts{grid-template-columns:1fr 1fr}}
+.opt{border:1px solid var(--line);border-radius:8px;padding:12px;cursor:pointer;text-align:center;font-size:14.5px;position:relative}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt b{display:block;color:var(--cocoa)}
+.opt small{color:var(--soft)}
+.opt:has(input:checked){border-color:var(--cocoa);background:var(--blush)}
+.opt:has(input:focus-visible){outline:2px solid var(--sage)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.row{grid-template-columns:1fr}}
+.field label{display:block;font-size:13.5px;font-weight:600;color:var(--soft);margin-bottom:5px}
+.field input,.field select{width:100%;font:inherit;border:1px solid var(--line);border-radius:10px;padding:10px;background:#fff}
+.msg{font-size:14.5px;font-weight:600;margin-top:8px;min-height:1.4em}
+.ok{color:#2F6B3A}.no{color:#B42318}
+.summary{position:sticky;top:92px}
+.summary h3{margin-bottom:10px}
+.line{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.line.total{font-weight:700;font-size:18px;border-bottom:0}
+.line.deposit{color:var(--sage);font-weight:700}
+.note{font-size:13.5px;color:var(--soft);margin-top:10px}
+/* info */
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:34px}
+@media (max-width:860px){.cols{grid-template-columns:1fr}}
+.info{border-top:2px solid var(--cocoa);padding-top:14px}
+.info p{color:var(--soft);font-size:15px;margin-top:8px}
+.owner{background:var(--cocoa);color:#F6E7E2}
+.owner h2,.owner h3{color:#fff}
+.owner .sub{color:#E9D3CD}
+.owner dl{display:grid;grid-template-columns:1fr 1fr;gap:6px 48px;margin-top:30px}
+.owner dt{font-weight:600;color:#fff;margin-top:16px}
+.owner dd{color:#EADAD5;font-size:15.5px;margin:2px 0 0}
+@media (max-width:760px){.owner dl{grid-template-columns:1fr}}
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;margin-top:28px}
+.gallery img{width:100%;height:280px;object-fit:cover;border-radius:4px}
+@media (max-width:700px){.gallery{grid-template-columns:1fr}.gallery img{height:220px}}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin-top:12px}
+.faq summary{font-weight:600;cursor:pointer;color:var(--cocoa)}
+.faq p{margin-top:10px;color:var(--soft)}
+footer{background:#2A1A18;color:#CDB9B3;padding:40px 0;font-size:14.5px}
+footer a{color:#fff}
+.fgrid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(380px,100%);background:#fff;box-shadow:-10px 0 30px rgba(0,0,0,.15);transform:translateX(100%);transition:transform .25s ease;z-index:60;padding:24px;display:flex;flex-direction:column}
+.drawer.open{transform:none}
+.drawer h3{margin-bottom:12px}
+.drawer .items{flex:1;overflow:auto}
+.modal{position:fixed;inset:0;background:rgba(42,26,24,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:70}
+.modal.open{display:flex}
+.modal .box{background:#fff;border-radius:8px;max-width:520px;padding:28px}
+.modal ol{margin:12px 0 18px 20px;color:var(--soft)}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">Concept design by Expert Insights. Juniper Lane Bakery is a fictional business; products and prices are examples. <a href="../">See all our sample work</a></div>
+
+<header>
+  <nav class="wrap nav" aria-label="Main">
+    <a class="logo" href="#top">Juniper Lane<small>Bakery, El Paso</small></a>
+    <ul>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#custom">Custom cakes</a></li>
+      <li><a href="#delivery">Pickup and delivery</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <button class="cartbtn" id="cart-open" type="button">Order <span id="cart-count">0</span></button>
+  </nav>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Birthday, shower and wedding cakes, baked to order in El Paso.</h1>
+      <p class="lead">Order from this week's menu, or design a custom cake and see the price as you choose. Pick it up at the bakery or have it delivered, and pay online when you order.</p>
+      <div class="hero-actions"><a class="btn" href="#custom">Design a custom cake</a><a class="btn light" href="#shop">Shop this week's menu</a></div>
+      <p class="facts">Open Tuesday to Saturday, 9 a.m. to 6 p.m. Call (915) 555-0187 with questions.</p>
+    </div>
+    <div class="hero-img"><img src="https://images.unsplash.com/photo-1739132124985-6c9277e268b5?auto=format&fit=crop&q=75&w=1000" alt="A bakery display case filled with cakes and pies" fetchpriority="high"></div>
+  </div>
+</section>
+
+<section class="blush" id="shop">
+  <div class="wrap">
+    <h2>This week's menu</h2>
+    <p class="sub">Baked fresh each week. Order two days ahead for pickup or delivery.</p>
+    <div class="shop">
+      <article class="prod"><img src="https://images.unsplash.com/photo-1565498253128-c06e0488ddee?auto=format&fit=crop&q=70&w=600" alt="A tray of frosted cupcakes" loading="lazy"><div class="body"><h3>Cupcake dozen</h3><p class="meta">Choose up to 3 flavors</p><p class="price">$42</p><button type="button" data-add="Cupcake dozen" data-price="42">Add to order</button></div></article>
+      <article class="prod"><img src="https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?auto=format&fit=crop&q=70&w=600" alt="A chocolate birthday cake with frosting roses" loading="lazy"><div class="body"><h3>Chocolate birthday cake</h3><p class="meta">8 inch, serves 12–16, message included</p><p class="price">$58</p><button type="button" data-add="Chocolate birthday cake" data-price="58">Add to order</button></div></article>
+      <article class="prod"><img src="https://images.unsplash.com/photo-1604413191066-4dd20bedf486?auto=format&fit=crop&q=70&w=600" alt="A pink cake with sprinkles and swirls on a cake stand" loading="lazy"><div class="body"><h3>Confetti celebration cake</h3><p class="meta">6 inch, serves 8–10</p><p class="price">$46</p><button type="button" data-add="Confetti celebration cake" data-price="46">Add to order</button></div></article>
+      <article class="prod"><img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&q=70&w=600" alt="A vanilla cake topped with fresh berries" loading="lazy"><div class="body"><h3>Fresh berry chantilly</h3><p class="meta">8 inch, seasonal berries</p><p class="price">$64</p><button type="button" data-add="Fresh berry chantilly" data-price="64">Add to order</button></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="custom">
+  <div class="wrap">
+    <h2>Design your custom cake</h2>
+    <p class="sub">Choose the size, flavor and finish, and the price updates as you go. Dates we can't make are not offered, so every order placed is one the kitchen can fill.</p>
+    <div class="builder">
+      <form class="panel" id="cake" onsubmit="return false">
+        <div class="step"><h3>1. Size</h3>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="size" value="6 inch round" data-price="48" data-lead="3"><b>6 inch</b><small>serves 8–10 · $48</small></label>
+            <label class="opt"><input type="radio" name="size" value="8 inch round" data-price="68" data-lead="3" checked><b>8 inch</b><small>serves 12–16 · $68</small></label>
+            <label class="opt"><input type="radio" name="size" value="Two-tier" data-price="165" data-lead="14"><b>Two-tier</b><small>serves 30–40 · $165</small></label>
+            <label class="opt"><input type="radio" name="size" value="Three-tier" data-price="295" data-lead="14"><b>Three-tier</b><small>serves 60–75 · $295</small></label>
+          </div></div>
+        <div class="step"><h3>2. Flavor and filling</h3>
+          <div class="row">
+            <div class="field"><label for="c-flavor">Cake flavor</label><select id="c-flavor"><option>Vanilla bean</option><option>Rich chocolate</option><option>Red velvet</option><option>Lemon</option><option value="Tres leches (+$12)">Tres leches (+$12)</option></select></div>
+            <div class="field"><label for="c-fill">Filling</label><select id="c-fill"><option>Buttercream</option><option>Strawberry</option><option>Chocolate ganache</option><option>Lemon curd</option><option value="Cajeta (+$8)">Cajeta (+$8)</option></select></div>
+          </div></div>
+        <div class="step"><h3>3. Finish</h3>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="finish" value="Classic buttercream" data-price="0" checked><b>Classic</b><small>buttercream</small></label>
+            <label class="opt"><input type="radio" name="finish" value="Floral piping" data-price="18"><b>Floral</b><small>piping · +$18</small></label>
+            <label class="opt"><input type="radio" name="finish" value="Fresh flowers" data-price="30"><b>Fresh</b><small>flowers · +$30</small></label>
+            <label class="opt"><input type="radio" name="finish" value="Fondant design" data-price="45"><b>Fondant</b><small>design · +$45</small></label>
+          </div>
+          <div class="field" style="margin-top:12px"><label for="c-msg">Message on the cake (optional)</label><input id="c-msg" maxlength="40" placeholder="Happy Birthday, Sofía"></div>
+        </div>
+        <div class="step" style="margin-bottom:0"><h3>4. When and how</h3>
+          <div class="row">
+            <div class="field"><label for="c-date">Date</label><input id="c-date" type="date"></div>
+            <div class="field"><label for="c-how">Pickup or delivery</label><select id="c-how"><option value="pickup">Pickup at the bakery</option><option value="delivery">Local delivery</option></select></div>
+          </div>
+          <p class="msg" id="c-datemsg" role="status"></p>
+          <div class="field" id="c-zipwrap" style="margin-top:6px;display:none"><label for="c-zip">Delivery ZIP</label><input id="c-zip" inputmode="numeric" maxlength="5" placeholder="79912"></div>
+          <p class="msg" id="c-zipmsg" role="status"></p>
+        </div>
+      </form>
+      <aside class="panel summary" aria-live="polite">
+        <h3>Your cake</h3>
+        <div id="c-lines"></div>
+        <div class="line total"><span>Total</span><span id="c-total">$0</span></div>
+        <div class="line deposit"><span>Due today (50% deposit)</span><span id="c-deposit">$0</span></div>
+        <p class="note">Custom cakes need a 50% deposit to reserve your date. The balance is due at pickup or delivery.</p>
+        <button class="btn" id="c-add" type="button" style="width:100%;margin-top:14px">Add cake to order</button>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="blush" id="delivery">
+  <div class="wrap">
+    <h2>Pickup and delivery</h2>
+    <div class="cols">
+      <div class="info"><h3>Pickup</h3><p>Choose a 30-minute window, Tuesday to Saturday, 9 a.m. to 6 p.m. You'll get a text when your order is ready.</p></div>
+      <div class="info"><h3>Local delivery</h3><p>Free within about 10 miles of the bakery; $15 up to 25 miles. Cakes travel in temperature-safe boxes and are delivered by our team, never a third-party service.</p></div>
+      <div class="info"><h3>Lead times</h3><p>Menu items: 2 days. Custom single-tier cakes: 3 days. Tiered and wedding cakes: 2 weeks, with a free tasting by appointment.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Recent custom work</h2>
+    <p class="sub">Wedding, shower and birthday cakes. Tiered cakes include a tasting by appointment.</p>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1653936392747-cbbf97f8d45c?auto=format&fit=crop&q=70&w=1000" alt="A three-tiered white wedding cake with red flowers" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1604413191066-4dd20bedf486?auto=format&fit=crop&q=70&w=600" alt="A pink cake decorated with sprinkles" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1565498253128-c06e0488ddee?auto=format&fit=crop&q=70&w=600" alt="Frosted cupcakes on a tray" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="owner">
+  <div class="wrap">
+    <h2>What the owner sees</h2>
+    <p class="sub">A note from Expert Insights: customers never see this part of the site. These are the tools that keep a busy bakery organized.</p>
+    <dl>
+      <div><dt>A daily order list</dt><dd>Every cake, size, flavor and pickup time on one screen, sorted by day and ready to print for the kitchen.</dd></div>
+      <div><dt>Lead times enforced</dt><dd>A tiered cake can't be ordered for tomorrow. The calendar blocks any date the kitchen can't make.</dd></div>
+      <div><dt>Deposits before baking starts</dt><dd>Custom work is half paid when it is ordered, so a no-show doesn't cost the bakery its ingredients and time.</dd></div>
+      <div><dt>Delivery-area rules</dt><dd>Addresses outside the delivery area can't check out, and the right fee is added for the rest.</dd></div>
+      <div><dt>Confirmations and reminders</dt><dd>Customers get a confirmation and a reminder the day before, which means fewer calls asking "is my cake ready?"</dd></div>
+      <div><dt>Menu updates from a phone</dt><dd>Seasonal items, sold-out flavors and holiday pre-orders can be changed without calling a developer.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <h2>Questions</h2>
+    <details><summary>Do you have gluten-free or allergy-friendly options?</summary><p>We offer gluten-free cupcakes and 6-inch cakes, made in a shared kitchen. Allergy notes can be added to every order.</p></details>
+    <details><summary>Can I change my custom cake after ordering?</summary><p>Yes, up to 48 hours before your pickup or delivery for single-tier cakes, and up to 7 days before for tiered cakes.</p></details>
+    <details><summary>What is your cancellation policy?</summary><p>Menu orders can be cancelled for a full refund up to 24 hours ahead. Custom cake deposits are refundable up to 7 days before the date.</p></details>
+    <details><summary>Do you deliver to venues?</summary><p>Yes. For weddings and large events we deliver and set up the cake at the venue, within our delivery area.</p></details>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap fgrid">
+    <span><b style="color:#fff">Juniper Lane Bakery</b> · a fictional business shown as a concept design</span>
+    <span>Website concept by <a href="../../">Expert Insights</a> · Photos: <a href="https://unsplash.com">Unsplash</a></span>
+  </div>
+</footer>
+
+<aside class="drawer" id="drawer" aria-label="Your order">
+  <h3>Your order</h3>
+  <div class="items" id="d-items"></div>
+  <div class="line total"><span>Total</span><span id="d-total">$0</span></div>
+  <button class="btn" id="checkout" type="button" style="margin-top:12px">Checkout</button>
+  <button class="btn light" id="d-close" type="button" style="margin-top:10px">Keep shopping</button>
+</aside>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title">
+  <div class="box">
+    <h3 id="m-title">This is a concept demo</h3>
+    <p>No order was placed and no payment was taken. On a live site, checkout would:</p>
+    <ol>
+      <li>Take payment (or a 50% deposit for custom cakes) through secure checkout.</li>
+      <li>Add the order to the bakery's daily list and calendar.</li>
+      <li>Send a confirmation, then a reminder the day before pickup or delivery.</li>
+    </ol>
+    <button class="btn" id="m-close" type="button">Close</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var $ = function (s) { return document.querySelector(s); };
+  var fmt = function (n) { return "$" + n.toFixed(2).replace(/\.00$/, ""); };
+  var localIso = function (d) { return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
+  var cart = [];
+  function renderCart() {
+    $("#cart-count").textContent = cart.length;
+    $("#d-items").innerHTML = cart.length ? cart.map(function (c, i) {
+      return '<div class="line"><span>' + c.name + (c.detail ? '<br><small style="color:var(--soft)">' + c.detail + "</small>" : "") + '</span><span>' + fmt(c.price) + ' <button type="button" data-rm="' + i + '" aria-label="Remove" style="border:0;background:none;cursor:pointer;color:var(--soft)">✕</button></span></div>';
+    }).join("") : '<p class="note">Your order is empty.</p>';
+    $("#d-total").textContent = fmt(cart.reduce(function (s, c) { return s + c.price; }, 0));
+  }
+  document.querySelectorAll("[data-add]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      cart.push({ name: b.dataset.add, price: +b.dataset.price });
+      renderCart(); b.textContent = "Added ✓"; b.classList.add("added");
+      setTimeout(function () { b.textContent = "Add to order"; b.classList.remove("added"); }, 1400);
+    });
+  });
+  $("#d-items").addEventListener("click", function (e) { var r = e.target.getAttribute("data-rm"); if (r !== null) { cart.splice(+r, 1); renderCart(); } });
+  var drawer = $("#drawer");
+  $("#cart-open").addEventListener("click", function () { drawer.classList.add("open"); });
+  $("#d-close").addEventListener("click", function () { drawer.classList.remove("open"); });
+
+  // Delivery zones (sample): free near the bakery, fee further out, none beyond
+  function zone(zip) {
+    if (!/^\d{5}$/.test(zip)) return null;
+    var z = +zip;
+    if ([79901, 79902, 79903, 79905, 79912, 79922, 79930, 79932].indexOf(z) > -1) return { ok: true, fee: 0, text: "Free delivery to this ZIP." };
+    if (z >= 79901 && z <= 79938) return { ok: true, fee: 15, text: "Delivery available. A $15 fee applies." };
+    return { ok: false, fee: 0, text: "Sorry, we don't deliver to that ZIP. Pickup is available." };
+  }
+  function selected(name) { return document.querySelector('input[name="' + name + '"]:checked'); }
+  function dateCheck() {
+    var v = $("#c-date").value, size = selected("size");
+    if (!v) return { ok: false, text: "Choose a date." };
+    var lead = +size.dataset.lead;
+    var d = new Date(v + "T12:00:00"), today = new Date(); today.setHours(0, 0, 0, 0);
+    var days = Math.floor((d - today) / 86400000);
+    if (d.getDay() === 0 || d.getDay() === 1) return { ok: false, text: "We're closed Sundays and Mondays. Please pick Tuesday to Saturday." };
+    if (days < lead) return { ok: false, text: (lead === 14 ? "Tiered cakes need 2 weeks' notice." : "Custom cakes need 3 days' notice.") + " The earliest date is " + (function () { var e = new Date(today.getTime() + lead * 86400000); while (e.getDay() === 0 || e.getDay() === 1) e.setDate(e.getDate() + 1); return e.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" }); })() + "." };
+    return { ok: true, text: "We can make that date." };
+  }
+  function cake() {
+    var size = selected("size"), fin = selected("finish");
+    var lines = [[size.value, +size.dataset.price]];
+    var fl = $("#c-flavor").value, fi = $("#c-fill").value;
+    if (/\+\$12/.test(fl)) lines.push(["Tres leches", 12]);
+    if (/\+\$8/.test(fi)) lines.push(["Cajeta filling", 8]);
+    if (+fin.dataset.price) lines.push([fin.value, +fin.dataset.price]);
+    var how = $("#c-how").value, z = null;
+    $("#c-zipwrap").style.display = how === "delivery" ? "block" : "none";
+    if (how === "delivery") { z = zone($("#c-zip").value.trim()); if (z && z.ok && z.fee) lines.push(["Delivery", z.fee]); }
+    var total = lines.reduce(function (s, l) { return s + l[1]; }, 0);
+    return { lines: lines, total: total, zone: z, how: how };
+  }
+  function update() {
+    var c = cake(), dc = dateCheck();
+    $("#c-lines").innerHTML = c.lines.map(function (l) { return '<div class="line"><span>' + l[0] + "</span><span>" + fmt(l[1]) + "</span></div>"; }).join("");
+    $("#c-total").textContent = fmt(c.total);
+    $("#c-deposit").textContent = fmt(Math.round(c.total * 50) / 100);
+    var dm = $("#c-datemsg"); dm.textContent = dc.text; dm.className = "msg " + (dc.ok ? "ok" : "no");
+    var zm = $("#c-zipmsg");
+    if (c.how === "delivery" && c.zone) { zm.textContent = c.zone.text; zm.className = "msg " + (c.zone.ok ? "ok" : "no"); } else { zm.textContent = ""; }
+  }
+  $("#cake").addEventListener("input", update);
+  $("#cake").addEventListener("change", update);
+  var t = new Date(); t.setDate(t.getDate() + 10); while (t.getDay() === 0 || t.getDay() === 1) t.setDate(t.getDate() + 1);
+  $("#c-date").value = localIso(t);
+  $("#c-date").min = localIso(new Date());
+
+  $("#c-add").addEventListener("click", function () {
+    var c = cake(), dc = dateCheck();
+    if (!dc.ok) { update(); $("#c-date").focus(); return; }
+    if (c.how === "delivery" && (!c.zone || !c.zone.ok)) { $("#c-zipmsg").textContent = c.zone ? c.zone.text : "Enter a delivery ZIP."; $("#c-zipmsg").className = "msg no"; $("#c-zip").focus(); return; }
+    var detail = [$("#c-flavor").value.replace(/ \(\+\$\d+\)/, ""), $("#c-fill").value.replace(/ \(\+\$\d+\)/, "") + " filling", selected("finish").value, new Date($("#c-date").value + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" }) + " · " + (c.how === "delivery" ? "delivery" : "pickup")].join(", ");
+    cart.push({ name: "Custom " + selected("size").value + " cake", detail: detail, price: c.total });
+    renderCart(); drawer.classList.add("open");
+  });
+
+  var modal = $("#modal");
+  $("#checkout").addEventListener("click", function () { if (!cart.length) return; drawer.classList.remove("open"); modal.classList.add("open"); $("#m-close").focus(); });
+  $("#m-close").addEventListener("click", function () { modal.classList.remove("open"); });
+  modal.addEventListener("click", function (e) { if (e.target === modal) modal.classList.remove("open"); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") { modal.classList.remove("open"); drawer.classList.remove("open"); } });
+  renderCart(); update();
+})();
+</script>
+</body>
+</html>
