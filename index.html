@@ -129,6 +129,12 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .photo-pair{display:grid;grid-template-columns:1.35fr 1fr;gap:16px}
 .photo-pair img{width:100%;height:clamp(220px,30vw,380px);object-fit:cover;border-radius:6px;display:block}
 @media (max-width:700px){.photo-pair{grid-template-columns:1fr}.photo-pair img{height:240px}}
+
+/* proof line, jump links */
+.proofline{margin-top:28px;padding:18px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);font-size:15.5px;color:var(--ink);max-width:none}
+.proofline strong{color:var(--navy)}
+.jump{margin-top:16px;font-size:15px;line-height:2}
+.jump a{font-weight:600;margin-right:14px;text-underline-offset:4px}
 </style>
 </head>
 <body>
@@ -149,12 +155,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <section class="intro">
   <div class="wrap">
     <h1>Expertise gets people hired. The human side decides what happens next.</h1>
-    <p>Expert Insights brings practical, research-grounded professional development to organizations: leadership and teamwork, well-being and stress, judgment and decision-making, and working well with AI. Our keynotes, workshops and multi-session series are led by two professors, in person anywhere in the U.S. or virtually.</p>
+    <p>Expert Insights brings practical, research-grounded professional development to organizations: leadership and teamwork, well-being and stress, judgment and decision-making, and working well with AI. Our keynotes, workshops and multi-session series are developed and delivered by two professors who teach and research these subjects, in person anywhere in the U.S. or virtually.</p>
     <div class="actions">
       <a class="button" href="#contact">Request a proposal</a>
       <a class="textlink" href="#workshops">See our workshops</a>
     </div>
     <p class="serve"><strong>We work with</strong> government agencies, school districts, colleges and universities, healthcare organizations, and companies.</p>
+    <p class="proofline"><strong>12 sessions</strong> delivered for El Paso County, Texas, government employees. <strong>4.8 out of 5</strong> from educators in our November 2025 Emotional Intelligence for Leaders workshop, where all 18 participants left with a strategy they could use right away. Recent audiences include El Paso County, New Mexico State University, El Paso Community College, the Border Learning Conference and New Mexico AMP.</p>
     <div class="photo-wide">
       <img src="https://images.unsplash.com/photo-1776039325185-8fd3d46af4e6?auto=format&fit=crop&q=75&w=1400" srcset="https://images.unsplash.com/photo-1776039325185-8fd3d46af4e6?auto=format&fit=crop&q=75&w=640 640w, https://images.unsplash.com/photo-1776039325185-8fd3d46af4e6?auto=format&fit=crop&q=75&w=960 960w, https://images.unsplash.com/photo-1776039325185-8fd3d46af4e6?auto=format&fit=crop&q=75&w=1400 1400w, https://images.unsplash.com/photo-1776039325185-8fd3d46af4e6?auto=format&fit=crop&q=75&w=1920 1920w" sizes="(max-width: 1040px) 100vw, 992px" alt="Participants listening during a professional training session" loading="eager" fetchpriority="high">
     </div>
@@ -255,22 +262,23 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     <div>
       <h2>Workshops</h2>
       <p>Each one can run as a keynote, a workshop or a series. If your team needs something else, tell us what's going on.</p>
+      <p class="jump"><a href="#g-leadership">Leadership</a><a href="#g-wellbeing">Well-being</a><a href="#g-decisions">Decision-making</a><a href="#g-keynotes">Keynotes</a></p>
     </div>
     <div>
       <div class="list">
-        <h3 class="group">Leadership and working together</h3>
+        <h3 class="group" id="g-leadership">Leadership and working together</h3>
         <div class="item"><h3>Thriving Teams</h3><p>Supervisors can't hand out motivation, but they can build the conditions for it. Drawing on decades of motivation research, this session looks at what keeps people engaged: some control over how they do their work, the chance to keep getting better at it, and real connection with the people around them.</p><p class="leave">Supervisors leave with specific changes to how they assign work, give feedback and run meetings.</p><span class="fmt">Workshop · Series</span></div>
-        <div class="item"><h3>Emotional Intelligence for Leaders</h3><p>Strong technical skills get people into leadership; how they handle themselves and others decides how they do there. This workshop builds the everyday skills behind steady leadership: recognizing what you're feeling and why, staying composed under pressure, reading what's happening on your team, and handling difficult conversations.</p><p class="leave">Participants take a self-assessment, practice each skill with realistic scenarios, and leave with a plan for one real situation they're facing.</p><span class="fmt">Keynote · Workshop · Series</span></div>
+        <div class="item"><h3>Emotional Intelligence for Leaders</h3><p>Strong technical skills get people into leadership; how they handle themselves and others decides how they perform there. This workshop builds the everyday skills behind steady leadership: recognizing what you're feeling and why, staying composed under pressure, reading what's happening on your team, and handling difficult conversations.</p><p class="leave">Participants take a self-assessment, practice each skill with realistic scenarios, and leave with a plan for one real situation they're facing.</p><span class="fmt">Keynote · Workshop · Series</span></div>
         <div class="item"><h3>The Multigenerational Workplace</h3><p>Many teams now span several generations, each with different habits around communication, feedback and technology. This session moves past stereotypes to what actually helps: understanding where the differences come from and adjusting how you communicate.</p><p class="leave">Teams leave with ways to pair long experience with newer skills, including team and reverse mentoring.</p><span class="fmt">Workshop · Series</span></div>
         <div class="item"><h3>Service Excellence</h3><p>For staff who work with the public, the hardest part of the job is often the interaction, not the task. This session focuses on staying calm with upset or demanding people, setting clear expectations, and responding consistently.</p><p class="leave">Participants practice real situations from their own front lines, including how to recover after a hard exchange so it doesn't carry into the next one.</p><span class="fmt">Workshop · Series</span></div>
-        <h3 class="group">Well-being</h3>
+        <h3 class="group" id="g-wellbeing">Well-being</h3>
         <div class="item"><h3>The Science of Happiness at Work</h3><p>Most of us are surprisingly bad at predicting what will make us happy: the raise, the title and the new purchase fade faster than we expect. This session walks through what the research actually shows, including how much the quality of our relationships matters.</p><p class="leave">Participants leave with simple, evidence-based practices they can start that week, such as noticing what went well and using their strengths more at work.</p><span class="fmt">Keynote · Workshop · Series</span></div>
         <div class="item"><h3>Stress Less, Work Happy</h3><p>Stress affects sleep, health, judgment and how people treat one another at work. This session explains in plain language what stress does to the body and mind, then turns to what helps.</p><p class="leave">Participants leave with small daily habits, ways to recover during a demanding day, and ideas for how a team can lower stress for each other.</p><span class="fmt">Keynote · Workshop</span></div>
         <div class="item"><h3>Beyond Balance: Work and Life</h3><p>A perfect balance between work and home is rarely realistic. This session focuses on integration instead: boundaries that hold, healthy ways of coping when both sides demand a lot, and recovering from hard weeks before they turn into burnout.</p><p class="leave">Participants leave with a personal plan for one boundary and one recovery habit.</p><span class="fmt">Keynote · Workshop</span></div>
-        <h3 class="group">Judgment and decision-making</h3>
+        <h3 class="group" id="g-decisions">Judgment and decision-making</h3>
         <div class="item"><h3>How Good Decisions Get Made</h3><p>Our minds make quick judgments all day, usually without our noticing, and most of the time that serves us well. Through live exercises such as the anchoring experiment, participants see common thinking traps in action. The emphasis is on normal human functioning, not blame.</p><p class="leave">Teams leave with simple habits for slowing down and checking their thinking when a decision really matters.</p><span class="fmt">Keynote · Workshop</span></div>
         <div class="item"><h3>Conformity and Obedience</h3><p>Why do good people sometimes go along with decisions they know are wrong? Drawing on classic research in social psychology, this session looks at how group pressure and authority shape what people do.</p><p class="leave">Leaders leave with practical ways to build a workplace where people speak up before small problems become big ones.</p><span class="fmt">Keynote · Workshop</span></div>
-        <h3 class="group">Keynote topics</h3>
+        <h3 class="group" id="g-keynotes">Keynote topics</h3>
         <div class="item"><h3>Leading Humans in the Age of AI</h3><p>As AI takes on more analytical work, the skills that stay human, such as judgment, trust and emotional intelligence, matter more. What that means for leaders and teams right now.</p><span class="fmt">Keynote · Workshop</span></div>
         <div class="item"><h3>Leveraging AI at Work</h3><p>A hands-on session on practical, everyday uses of AI tools for drafting, summarizing, analysis and planning, along with the privacy questions to ask before anyone puts work information into them.</p><span class="fmt">Workshop</span></div>
         <div class="item"><h3>Behind the Mask</h3><p>What research tells us about psychopathy, how it differs from the movie version, and why understanding it matters in workplaces and communities.</p><span class="fmt">Keynote</span></div>
@@ -333,17 +341,6 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <section>
   <div class="wrap split">
     <div>
-      <h2>The book</h2>
-    </div>
-    <div>
-      <p>We're writing a practical book for working professionals on handling the people, pressure and expectations around them. Each chapter is one of the skills we teach in our workshops.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap split">
-    <div>
       <h2>Who leads the sessions</h2>
     </div>
     <div class="people">
@@ -359,6 +356,17 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   </div>
 </section>
 
+<section>
+  <div class="wrap split">
+    <div>
+      <h2>The book</h2>
+    </div>
+    <div>
+      <p>We're writing a practical book for working professionals on handling the people, pressure and expectations around them. Each chapter is one of the skills we teach in our workshops.</p>
+    </div>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="wrap split">
     <div>
@@ -367,7 +375,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     <div>
       <p style="margin-top:0">Tell us who you'd like to train and what's going on. We'll set up a short call and follow up with a written proposal. Based in El Paso, Texas, working with organizations across the country.</p>
       <p><a class="mail" href="mailto:expertinsightsco@gmail.com">expertinsightsco@gmail.com</a></p>
-      <div class="actions"><a class="button" href="mailto:expertinsightsco@gmail.com?subject=Training%20proposal%20request">Request a proposal</a></div>
+      <div class="actions"><a class="button" href="mailto:expertinsightsco@gmail.com?subject=Training%20proposal%20request&amp;body=Hello%20Expert%20Insights%2C%0A%0AWe%27re%20interested%20in%20a%20training%20session.%0A%0AOrganization%3A%0AYour%20name%20and%20title%3A%0APhone%20%28optional%29%3A%0ATopic%28s%29%20of%20interest%3A%0AApproximate%20number%20of%20participants%20%28optional%29%3A%0APreferred%20timeframe%20%28optional%29%3A%0AIn%20person%20or%20virtual%3A%0A%0AAnything%20else%20we%20should%20know%3A%0A">Request a proposal</a></div>
     </div>
   </div>
 </section>
