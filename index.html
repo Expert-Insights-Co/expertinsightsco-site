@@ -1,194 +1,273 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Expert Insights — Custom Storefronts + Online Booking · El Paso, TX</title>
-<meta name="description" content="Expert Insights builds custom online storefronts with built-in booking for small food and service businesses in El Paso, Texas. Customers book and pay you there, not in your DMs.">
-<link rel="icon" href="assets/favicon.png" type="image/png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Expert Insights | Emotional Intelligence and Well-Being Training for Organizations</title>
+<meta name="description" content="Expert Insights delivers workshops and keynotes on emotional intelligence, well-being and decision-making for government agencies, school districts, universities, healthcare organizations and companies, in person across the U.S. or virtually.">
+<link rel="icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1D3A; --orange:#F47C20; --paper:#FBF8F3; --ink:#1B2537; --soft:#56627A; --rule:#DDD5C7;
+  --wrap:1040px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Montserrat',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--navy)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{color:var(--navy);font-weight:700;line-height:1.2;letter-spacing:-.01em}
+h1{font-size:clamp(32px,4.6vw,48px);max-width:16em}
+h2{font-size:clamp(24px,3vw,30px)}
+h3{font-size:18px}
+p{max-width:38em}
+.soft{color:var(--soft)}
+
+/* header */
+header{border-bottom:1px solid var(--rule)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
+.nav img{height:38px;width:auto;display:block}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:15px;font-weight:500}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{text-decoration:underline}
+@media (max-width:640px){.nav ul{gap:16px;font-size:14px}.nav ul li.hide-sm{display:none}}
+
+/* sections */
+section{padding:72px 0;border-bottom:1px solid var(--rule)}
+section:last-of-type{border-bottom:0}
+.intro{padding:88px 0 76px}
+.intro p{font-size:19px;margin-top:22px;color:var(--soft)}
+.actions{margin-top:32px;display:flex;flex-wrap:wrap;gap:24px;align-items:center}
+.button{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:14px 24px;border-radius:4px}
+.button:hover{background:#163059}
+.textlink{font-weight:600;text-decoration:underline;text-underline-offset:4px}
+.serve{margin-top:40px;font-size:15px;color:var(--soft)}
+.serve strong{color:var(--ink);font-weight:600}
+
+/* two-column section layout */
+.split{display:grid;grid-template-columns:260px 1fr;gap:48px}
+.split > div:first-child p{font-size:15px;color:var(--soft);margin-top:12px}
+@media (max-width:820px){.split{grid-template-columns:1fr;gap:20px}}
+
+/* workshop list */
+.list{border-top:1px solid var(--rule)}
+.item{padding:22px 0;border-bottom:1px solid var(--rule)}
+.item h3 a{text-decoration:none}
+.item p{margin-top:6px;color:var(--soft);font-size:16px}
+.item .fmt{display:block;margin-top:8px;font-size:13.5px;font-weight:600;color:var(--orange)}
+.also{margin-top:24px;font-size:15.5px;color:var(--soft)}
+
+/* agenda */
+table{width:100%;border-collapse:collapse;font-size:16px}
+td{padding:12px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+td:first-child{width:90px;color:var(--soft);font-weight:600}
+td span{display:block;color:var(--soft);font-size:15px}
+
+/* results */
+.results p.big{font-size:20px;color:var(--ink)}
+blockquote{margin-top:28px;padding-left:20px;border-left:3px solid var(--orange);font-size:18px;color:var(--ink);max-width:36em}
+blockquote cite{display:block;margin-top:6px;font-style:normal;font-size:14px;color:var(--soft)}
+
+/* steps */
+ol.steps{list-style:none;counter-reset:s}
+ol.steps li{counter-increment:s;padding:16px 0 16px 44px;border-bottom:1px solid var(--rule);position:relative}
+ol.steps li:first-child{border-top:1px solid var(--rule)}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:16px;font-weight:700;color:var(--orange)}
+ol.steps li strong{color:var(--navy)}
+.formats{margin-top:24px;font-size:15.5px;color:var(--soft)}
+
+/* people */
+.people{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.people p{font-size:15.5px;color:var(--soft);margin-top:6px}
+@media (max-width:700px){.people{grid-template-columns:1fr}}
+
+/* contact */
+.contact{background:var(--navy);color:#fff;border-bottom:0}
+.contact h2{color:#fff}
+.contact p{color:#C9D3E3;margin-top:14px}
+.contact a.mail{color:#fff;font-weight:600;font-size:20px;text-underline-offset:5px}
+.contact .button{background:var(--orange)}
+.contact .button:hover{background:#dc6c14}
+footer{padding:28px 0 40px;font-size:14px;color:var(--soft)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* outcomes */
+.outcomes{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:28px 40px}
+.outcomes li h3{font-size:18px}
+.outcomes li p{margin-top:6px;color:var(--soft);font-size:16px}
+@media (max-width:700px){.outcomes{grid-template-columns:1fr}}
+.orgs{margin-top:28px;font-size:15.5px;color:var(--soft)}
+.orgs strong{color:var(--ink);font-weight:600}
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <nav class="nav wrap" aria-label="Primary">
-    <a class="brand" href="index.html" aria-label="Expert Insights — home">
-      <img class="brand__logo" src="assets/logo.png" alt="Expert Insights">
-    </a>
-    <button class="nav__toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <ul class="nav__links" id="navLinks">
-      <li><a href="index.html" aria-current="page">Home</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="work.html">Our Work</a></li>
-      <li><a class="btn btn--primary" href="contact.html">Let's Talk</a></li>
+<header>
+  <nav class="wrap nav" aria-label="Main">
+    <a href="#top"><img src="assets/logo.png" alt="Expert Insights"></a>
+    <ul>
+      <li><a href="#workshops">Workshops</a></li>
+      <li class="hide-sm"><a href="#how">How it works</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<main>
+<main id="top">
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="wrap">
-      <p class="eyebrow">Custom Storefronts · El Paso, TX</p>
-      <h1>We build your online storefront.</h1>
-      <p class="lead">Customers <span class="accent">book and pay you there</span> — not in your DMs. Hand-designed, built around your business, and live in weeks.</p>
-      <div class="cta-row">
-        <a class="btn btn--primary" href="contact.html">Let's Talk</a>
-        <a class="btn btn--outline" href="work.html">See our work</a>
-      </div>
-      <p class="hero__note"><span aria-hidden="true">◆</span> Real Insights. Expertly Delivered.</p>
+<section class="intro">
+  <div class="wrap">
+    <h1>Emotional intelligence and well-being training for organizations.</h1>
+    <p>Expert Insights helps organizations build the skills that decide how well people work together: emotional intelligence, well-being and sound decision-making. We deliver keynotes, half-day workshops and multi-session series, built around your staff, in person anywhere in the U.S. or virtually.</p>
+    <div class="actions">
+      <a class="button" href="#contact">Request a proposal</a>
+      <a class="textlink" href="#workshops">See our workshops</a>
     </div>
-  </section>
+    <p class="serve"><strong>We work with</strong> government agencies, school districts, colleges and universities, healthcare organizations, and companies.</p>
+  </div>
+</section>
 
-  <!-- What you get -->
-  <section class="section">
-    <div class="wrap">
-      <div class="center measure">
-        <p class="eyebrow">What you get</p>
-        <h2>A real online home that does the work for you.</h2>
-        <p class="lead" style="margin-top:14px">Most small businesses lose bookings because everything still happens in DMs. We fix that.</p>
-      </div>
-      <div class="grid grid--3" style="margin-top:48px">
-        <div class="card">
-          <div class="card__num">1</div>
-          <h3>A storefront that fits</h3>
-          <p>Pages designed by hand around your business and your brand — your colors, your packages, your voice. Not a template with your logo dropped on top.</p>
-        </div>
-        <div class="card">
-          <div class="card__num">2</div>
-          <h3>Booking built in</h3>
-          <p>Customers pick a date, choose a package, and pay a deposit — automatically. Confirmation and reminder emails go out without you lifting a finger.</p>
-        </div>
-        <div class="card">
-          <div class="card__num">3</div>
-          <h3>Yours to keep</h3>
-          <p>You own the site, the domain, and every asset. We hand you a recorded walkthrough so you can run it yourself, with support on call when you want it.</p>
-        </div>
-      </div>
+<section>
+  <div class="wrap split">
+    <div>
+      <h2>What changes for your team</h2>
+      <p>What participants can do after a session, in their own work, the following week.</p>
     </div>
-  </section>
+    <ul class="outcomes">
+      <li><h3>Stay steady under pressure</h3><p>Notice a reaction building and choose a response, in a tense meeting or with an upset member of the public.</p></li>
+      <li><h3>Have the hard conversation</h3><p>Give difficult feedback, disagree with a supervisor, or address a conflict without damaging the working relationship.</p></li>
+      <li><h3>Make better calls</h3><p>Catch the quick judgments that lead decisions astray, and slow down when the stakes are high.</p></li>
+      <li><h3>Keep people engaged</h3><p>Understand what actually sustains motivation and well-being at work, and what supervisors can do about it.</p></li>
+    </ul>
+  </div>
+</section>
 
-  <!-- Proof band -->
-  <section class="section section--tint">
-    <div class="wrap">
-      <div class="case">
-        <div>
-          <p class="eyebrow">Our first build</p>
-          <h2>Melania Cotton Candy took their bookings out of the DMs.</h2>
-          <div class="beforeafter">
-            <div class="ba ba--before">
-              <div class="ba__tag">Before</div>
-              <p>Every quinceañera and party order handled by hand in Instagram DMs.</p>
-            </div>
-            <div class="ba ba--after">
-              <div class="ba__tag">After</div>
-              <p>A branded storefront where customers browse, book, and pay a deposit online.</p>
-            </div>
-          </div>
-          <p class="lead" style="font-size:16px">An El Paso live cotton-candy art experience — now with a storefront built around their characters, their packages, and their brand.</p>
-          <p style="margin-top:22px"><a class="textlink" href="work.html">See the full case study</a></p>
-        </div>
-        <a class="browser" href="https://melaniacottoncandyep.com" target="_blank" rel="noopener" aria-label="Visit the live Melania Cotton Candy storefront">
-          <span class="browser__bar">
-            <span class="browser__dot"></span><span class="browser__dot"></span><span class="browser__dot"></span>
-            <span class="browser__url">melaniacottoncandyep.com</span>
-          </span>
-          <img class="browser__img" src="assets/melania-storefront.jpg" alt="The Melania Cotton Candy packages page we designed — a live storefront" loading="lazy">
-        </a>
+<section id="workshops">
+  <div class="wrap split">
+    <div>
+      <h2>Workshops</h2>
+      <p>Each one can run as a keynote, a workshop or a series. If your team needs something else, tell us what's going on.</p>
+    </div>
+    <div>
+      <div class="list">
+        <div class="item"><h3>Emotional Intelligence for Leaders</h3><p>Staying steady under pressure, reading the room, and handling difficult conversations. Includes a self-assessment and practice in every part of the session.</p><span class="fmt">Keynote · Workshop · Series</span></div>
+        <div class="item"><h3>The Science of Happiness at Work</h3><p>Why people chase things that don't make them happier, what the research says matters most, and small daily practices that help.</p><span class="fmt">Keynote · Workshop · Series</span></div>
+        <div class="item"><h3>How Good Decisions Get Made</h3><p>The quick judgments our minds make before we notice, shown through live exercises, and simple habits for slowing down when it counts.</p><span class="fmt">Keynote · Workshop</span></div>
+        <div class="item"><h3>Thriving Teams</h3><p>What keeps people motivated: some control over their work, getting better at it, and feeling connected to their coworkers. How supervisors can build all three.</p><span class="fmt">Workshop · Series</span></div>
+        <div class="item"><h3>Stress Less, Work Happy</h3><p>How stress affects the body and mind, and practical habits for managing it during a demanding workday.</p><span class="fmt">Keynote · Workshop</span></div>
+        <div class="item"><h3>Beyond Balance</h3><p>Setting boundaries, recovering from hard days, and keeping work from crowding out everything else.</p><span class="fmt">Keynote · Workshop</span></div>
+        <div class="item"><h3>The Multigenerational Workplace</h3><p>Working across generations and backgrounds, and pairing long experience with newer skills.</p><span class="fmt">Workshop · Series</span></div>
+        <div class="item"><h3>Service Excellence</h3><p>For staff who work with the public: staying calm with upset customers, setting expectations, and recovering after a hard interaction.</p><span class="fmt">Workshop · Series</span></div>
+      </div>
+      <p class="also">Also available as keynotes: Leading Humans in the Age of AI, Leveraging AI at Work, Conformity and Obedience, and Behind the Mask (the psychology of psychopathy).</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <h2>A two-hour session</h2>
+      <p>A sample agenda from Emotional Intelligence for Leaders. Every part pairs one idea with something participants do.</p>
+    </div>
+    <div>
+      <table>
+        <tr><td>10 min</td><td>Welcome<span>Pairs share a recent leadership challenge</span></td></tr>
+        <tr><td>20 min</td><td>Self-awareness<span>Naming feelings precisely; EI self-assessment</span></td></tr>
+        <tr><td>20 min</td><td>Self-management<span>Pause-and-respond practice</span></td></tr>
+        <tr><td>20 min</td><td>Social awareness<span>Reading the room from real scenarios</span></td></tr>
+        <tr><td>20 min</td><td>Relationship management<span>Practicing a difficult conversation</span></td></tr>
+        <tr><td>15 min</td><td>Putting it together<span>How the four areas work together in real time</span></td></tr>
+        <tr><td>15 min</td><td>Commitment<span>One strategy for a real moment this week</span></td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="results">
+  <div class="wrap split">
+    <div>
+      <h2>What participants say</h2>
+    </div>
+    <div>
+      <p class="big">In our most recent emotional intelligence workshop for educators, in November 2025, participants rated the session 4.8 out of 5, and all 18 left with a strategy they could use right away. We have also delivered 12 sessions for El Paso County, Texas, government employees.</p>
+      <p class="orgs"><strong>Recent audiences include</strong> El Paso County, New Mexico State University, El Paso Community College, the Border Learning Conference, and New Mexico AMP.</p>
+      <blockquote>"I always felt I was pretty strong in this, but now I've found the holes."<cite>Educator, Emotional Intelligence for Leaders</cite></blockquote>
+      <blockquote>"Understanding that I am human, but can work through difficult situations."<cite>Educator, Emotional Intelligence for Leaders</cite></blockquote>
+      <blockquote>"I believed happiness was based on my urge for materialistic things, now I know it's about connections."<cite>Participant, The Science of Happiness</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap split">
+    <div>
+      <h2>How it works</h2>
+    </div>
+    <div>
+      <ol class="steps">
+        <li><strong>A short call.</strong> Who will be in the room and what you want to change.</li>
+        <li><strong>A written proposal.</strong> The agenda, format and price.</li>
+        <li><strong>The session.</strong> In person anywhere in the U.S., or virtual.</li>
+        <li><strong>Follow-up.</strong> A participant evaluation, a short summary for you, and a check-in afterward.</li>
+      </ol>
+      <p class="formats">Keynotes run 60 to 90 minutes, workshops 2 to 4 hours, and series meet over several weeks. Public-sector and education rates are available.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <h2>The book</h2>
+    </div>
+    <div>
+      <p>We're writing a practical book for working professionals on handling the people, pressure and expectations around them. Each chapter is one of the skills we teach in our workshops.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <h2>Who leads the sessions</h2>
+    </div>
+    <div class="people">
+      <div>
+        <h3>René Guillaume, PhD</h3>
+        <p>Professor of Educational Leadership and Administration at New Mexico State University. Teaches a graduate course on emotional intelligence and researches how professionals advance in their organizations.</p>
+      </div>
+      <div>
+        <h3>Nicholas Fernandez</h3>
+        <p>Psychology educator with more than 30 years of teaching and professional development, focused on happiness, decision-making and how the mind works at work.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Pricing teaser -->
-  <section class="section">
-    <div class="wrap center">
-      <p class="eyebrow">Simple pricing</p>
-      <h2>Three ways to get online.</h2>
-      <p class="lead measure" style="margin:14px auto 44px">One-time builds starting at $997. No monthly platform lock-in — you own everything.</p>
-      <div class="tiers" style="text-align:left">
-        <div class="tier">
-          <div class="tier__name">Starter</div>
-          <div class="tier__promise">Get online, take bookings.</div>
-          <div class="tier__price">$997<small> one-time</small></div>
-          <div class="tier__sub">&nbsp;</div>
-          <ul>
-            <li>Custom-branded storefront</li>
-            <li>Booking configured for you</li>
-            <li>Up to 5 packages loaded</li>
-            <li>Live in ~2 weeks</li>
-          </ul>
-          <a class="btn btn--outline" href="pricing.html">See what's included</a>
-        </div>
-        <div class="tier tier--feature">
-          <div class="tier__flag">Our flagship</div>
-          <div class="tier__name">Signature</div>
-          <div class="tier__promise">A storefront designed by hand around your business.</div>
-          <div class="tier__price">$2,497<small> intro</small></div>
-          <div class="tier__sub">What we built for Melania</div>
-          <ul>
-            <li>Every page hand-designed</li>
-            <li>Booking engineered end-to-end</li>
-            <li>Pro email on your domain</li>
-            <li>Training + 90-day support</li>
-          </ul>
-          <a class="btn btn--primary" href="pricing.html">See what's included</a>
-        </div>
-        <div class="tier">
-          <div class="tier__name">Growth</div>
-          <div class="tier__promise">Run it yourself, grow your list.</div>
-          <div class="tier__price">$1,497<small> one-time</small></div>
-          <div class="tier__sub">&nbsp;</div>
-          <ul>
-            <li>Everything in Starter</li>
-            <li>Recorded dashboard training</li>
-            <li>Email marketing set up</li>
-            <li>Up to 10 packages loaded</li>
-          </ul>
-          <a class="btn btn--outline" href="pricing.html">See what's included</a>
-        </div>
-      </div>
+<section class="contact" id="contact">
+  <div class="wrap split">
+    <div>
+      <h2>Contact</h2>
     </div>
-  </section>
-
-  <!-- Closing CTA -->
-  <section class="section cta-band">
-    <div class="wrap">
-      <h2>Let's build something that lasts.</h2>
-      <p class="lead measure">Tell us about your business. We'll show you exactly what your storefront could look like — no pressure, no jargon.</p>
-      <a class="btn btn--primary" href="contact.html">Let's Talk</a>
+    <div>
+      <p style="margin-top:0">Tell us who you'd like to train and what's going on. We'll set up a short call and follow up with a written proposal. Based in El Paso, Texas, working with organizations across the country.</p>
+      <p><a class="mail" href="mailto:expertinsightsco@gmail.com">expertinsightsco@gmail.com</a></p>
+      <div class="actions"><a class="button" href="mailto:expertinsightsco@gmail.com?subject=Training%20proposal%20request">Request a proposal</a></div>
     </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
-<footer class="site-footer">
+<footer>
   <div class="wrap">
-    <div class="cols">
-      <div>
-        <a class="brand" href="index.html">
-          <img class="brand__mark" src="assets/favicon.png" alt="">
-          <span class="brand__name">Expert&nbsp;Insights</span>
-        </a>
-        <p>Custom online storefronts with built-in booking for small food &amp; service businesses. Proudly built in El Paso, Texas.</p>
-      </div>
-      <ul class="footer-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="work.html">Our Work</a></li>
-        <li><a href="contact.html">Let's Talk</a></li>
-      </ul>
-    </div>
-    <div class="fine">
-      <span>© 2026 Expert Insights LLC · El Paso, TX</span>
-      <span><a href="mailto:expertinsightsco@gmail.com">expertinsightsco@gmail.com</a></span>
-    </div>
+    <span>Expert Insights, LLC · Based in El Paso, Texas · Serving organizations nationwide</span>
+    <span><a href="websites/">Websites for small businesses</a> · © 2026</span>
   </div>
 </footer>
 
-<script src="assets/nav.js"></script>
 </body>
 </html>

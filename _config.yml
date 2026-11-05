@@ -4,6 +4,6 @@
 # founders' names, and we're holding on whether to attach them publicly.
 # To make it public again: delete the "- about.html" line below and push.
 exclude:
-  - about.html
+  - websites/about.html
   - README.md
   - _config.yml
