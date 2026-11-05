@@ -70,7 +70,8 @@
             <textarea id="message" name="message" placeholder="What does your business do? How do customers book with you today?"></textarea>
           </div>
           <button type="submit" class="btn btn--primary">Send it our way</button>
-          <p id="formNote" style="margin-top:14px;font-size:13.5px;color:var(--ink-soft)">This opens your email app with everything filled in — just hit send. Prefer to write us directly? <a class="textlink" href="mailto:expertinsightsco@gmail.com">expertinsightsco@gmail.com</a></p>
+          <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+          <p id="formNote" role="status" style="margin-top:14px;font-size:13.5px;color:var(--ink-soft)">Prefer to write us directly? <a class="textlink" href="mailto:expertinsightsco@gmail.com">expertinsightsco@gmail.com</a></p>
         </form>
 
         <aside class="contact-aside">
@@ -114,18 +115,33 @@
 
 <script src="../assets/nav.js"></script>
 <script>
+/* Sends through Web3Forms (same account as the training proposal form) to expertinsightsco@gmail.com. */
+var FORM_KEY = '8b26d1af-966e-4284-a09e-70894e94cdda';
+var TO = 'expertinsightsco@gmail.com';
 document.getElementById('contactForm').addEventListener('submit', function (e) {
   e.preventDefault();
+  var f = this, note = document.getElementById('formNote');
   var v = function (id) { return (document.getElementById(id).value || '').trim(); };
-  var subject = 'Storefront inquiry' + (v('business') ? ' — ' + v('business') : '');
+  if (!v('name')) { document.getElementById('name').focus(); note.textContent = 'Please add your name.'; return; }
+  if (!/^\S+@\S+\.\S+$/.test(v('email'))) { document.getElementById('email').focus(); note.textContent = 'Please add an email address we can reply to.'; return; }
+  if (f.elements.botcheck.value) return;
+  var subject = 'Website inquiry' + (v('business') ? ': ' + v('business') : '');
   var body =
     'Name: ' + v('name') + '\n' +
     'Email: ' + v('email') + '\n' +
-    'Business: ' + v('business') + '\n' +
+    'Business: ' + (v('business') || '-') + '\n' +
     'Interested in: ' + v('tier') + '\n\n' +
     v('message');
-  window.location.href = 'mailto:expertinsightsco@gmail.com?subject=' +
-    encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  note.textContent = 'Sending...';
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({ access_key: FORM_KEY, subject: subject, from_name: 'Expert Insights website (web design)', replyto: v('email'), botcheck: '', message: body })
+  }).then(function (r) { return r.json(); }).then(function (d) {
+    if (!d.success) throw new Error();
+    f.reset(); note.textContent = 'Thank you. Your message has been received, and we\'ll follow up shortly.';
+  }).catch(function () {
+    note.innerHTML = 'Something went wrong. Please email us at <a class="textlink" href="mailto:' + TO + '">' + TO + '</a>.';
+  });
 });
 </script>
 </body>
