@@ -431,7 +431,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 /* Proposal form. If FORM_KEY is set (a free Web3Forms access key), the form sends directly.
    Without a key it opens the visitor's email app with the request written out. */
 (function () {
-  var FORM_KEY = "";
+  var FORM_KEY = "8b26d1af-966e-4284-a09e-70894e94cdda";
   var TO = "expertinsightsco@gmail.com";
   var f = document.getElementById("proposal-form");
   var note = document.getElementById("form-note");
@@ -456,7 +456,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       note.textContent = "Sending...";
       fetch("https://api.web3forms.com/submit", {
         method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({ access_key: FORM_KEY, subject: subject, from_name: "Expert Insights website", replyto: v("email"), message: lines.join("\n") })
+        body: JSON.stringify({ access_key: FORM_KEY, subject: subject, from_name: "Expert Insights website", replyto: v("email"), botcheck: "", message: lines.join("\n") })
       }).then(function (r) { return r.json(); }).then(function (d) {
         if (d.success) { f.reset(); note.textContent = "Thank you. We'll be in touch soon."; }
         else { throw new Error(); }
