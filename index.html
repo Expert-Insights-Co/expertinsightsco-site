@@ -276,7 +276,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   <div class="wrap split">
     <div>
       <h2>Workshops</h2>
-      <p>Each one can run as a keynote, a workshop or a series. If your team needs something else, tell us what's going on.</p>
+      <p>Each one can run as a keynote, a workshop or a series. Each can be tailored to your organization's goals, or we can develop a session on a topic not listed here.</p>
       <p class="jump"><a href="#g-leadership">Leadership</a><a href="#g-wellbeing">Well-being</a><a href="#g-decisions">Decision-making</a><a href="#g-keynotes">Keynotes</a></p>
     </div>
     <div>
@@ -289,7 +289,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         <h3 class="group" id="g-wellbeing">Well-being</h3>
         <div class="item"><h3>The Science of Happiness at Work</h3><p>Most of us are surprisingly bad at predicting what will make us happy: the raise, the title and the new purchase fade faster than we expect. This session walks through what the research actually shows, including how much the quality of our relationships matters.</p><p class="leave">Participants leave with simple, evidence-based practices they can start that week, such as noticing what went well and using their strengths more at work.</p><span class="fmt">Keynote · Workshop · Series</span></div>
         <div class="item"><h3>Stress Less, Work Happy</h3><p>Stress affects sleep, health, judgment and how people treat one another at work. This session explains in plain language what stress does to the body and mind, then turns to what helps.</p><p class="leave">Participants leave with small daily habits, ways to recover during a demanding day, and ideas for how a team can lower stress for each other.</p><span class="fmt">Keynote · Workshop</span></div>
-        <div class="item"><h3>Beyond Balance: Work and Life</h3><p>A perfect balance between work and home is rarely realistic. This session focuses on integration instead: boundaries that hold, healthy ways of coping when both sides demand a lot, and recovering from hard weeks before they turn into burnout.</p><p class="leave">Participants leave with a personal plan for one boundary and one recovery habit.</p><span class="fmt">Keynote · Workshop</span></div>
+        <div class="item"><h3>Beyond Balance: Work and Life</h3><p>A perfect balance between work and home is rarely realistic. This session focuses on integration instead: boundaries that hold, healthy ways of coping when work and home both make heavy demands, and recovering from hard weeks before they turn into burnout.</p><p class="leave">Participants leave with a personal plan for one boundary and one recovery habit.</p><span class="fmt">Keynote · Workshop</span></div>
         <h3 class="group" id="g-decisions">Judgment and decision-making</h3>
         <div class="item"><h3>How Good Decisions Get Made</h3><p>Our minds make quick judgments all day, usually without our noticing, and most of the time that serves us well. Through live exercises such as the anchoring experiment, participants see common thinking traps in action. The emphasis is on normal human functioning, not blame.</p><p class="leave">Teams leave with simple habits for slowing down and checking their thinking when a decision really matters.</p><span class="fmt">Keynote · Workshop</span></div>
         <div class="item"><h3>Conformity and Obedience</h3><p>Why do good people sometimes go along with decisions they know are wrong? Drawing on classic research in social psychology, this session looks at how group pressure and authority shape what people do.</p><p class="leave">Leaders leave with practical ways to build a workplace where people speak up before small problems become big ones.</p><span class="fmt">Keynote · Workshop</span></div>
@@ -388,7 +388,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       <h2>Contact</h2>
     </div>
     <div>
-      <p style="margin-top:0">Tell us who you'd like to train and what's going on. We'll be in touch to set up a short call, then follow up with a written proposal. Based in El Paso, Texas, working with organizations across the country.</p>
+      <p style="margin-top:0">Share a few details about your organization and training goals. We'll follow up to schedule a brief consultation, then provide a written proposal. Based in El Paso, Texas, working with organizations across the country.</p>
       <form class="pform" id="proposal-form" novalidate>
         <div><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
         <div><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
@@ -408,7 +408,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
           <select id="f-format" name="format"><option>Either</option><option>In person</option><option>Virtual</option></select></div>
         <div><label for="f-size">Number of participants <span class="opt">(optional)</span></label><input id="f-size" name="participants" inputmode="numeric"></div>
         <div><label for="f-when">Timeframe <span class="opt">(optional)</span></label><input id="f-when" name="timeframe" placeholder="e.g., spring 2027"></div>
-        <div class="full"><label for="f-msg">What's going on <span class="opt">(optional)</span></label><textarea id="f-msg" name="message"></textarea></div>
+        <div class="full"><label for="f-msg">Training goals or context <span class="opt">(optional)</span></label><textarea id="f-msg" name="message"></textarea></div>
         <input class="hp" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="full"><button type="submit">Send request</button></div>
         <p class="formnote" id="form-note" role="status">Prefer email? Write to <a href="mailto:expertinsightsco@gmail.com">expertinsightsco@gmail.com</a>.</p>
@@ -458,13 +458,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify({ access_key: FORM_KEY, subject: subject, from_name: "Expert Insights website", replyto: v("email"), botcheck: "", message: lines.join("\n") })
       }).then(function (r) { return r.json(); }).then(function (d) {
-        if (d.success) { f.reset(); note.textContent = "Thank you. We'll be in touch soon."; }
+        if (d.success) { f.reset(); note.textContent = "Thank you. Your request has been received, and we'll follow up shortly."; }
         else { throw new Error(); }
       }).catch(function () { note.innerHTML = "Something went wrong. Please email us at <a href=\"mailto:" + TO + "\">" + TO + "</a>."; });
       return;
     }
     window.location.href = "mailto:" + TO + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
-    note.innerHTML = "Your email app should open with your request written out. Just press send. If nothing opens, email us at <a href=\"mailto:" + TO + "\">" + TO + "</a>.";
+    note.innerHTML = "Your email application should open with your request prepared. Please select Send to complete your request. If nothing opens, email us at <a href=\"mailto:" + TO + "\">" + TO + "</a>.";
   });
 })();
 </script>
