@@ -116,6 +116,15 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .points li strong{display:block;color:var(--navy);font-size:17px}
 .points li span{color:var(--soft);font-size:16px}
 @media (max-width:860px){.approach{grid-template-columns:1fr}}
+
+/* photos */
+.intro h1{font-size:clamp(34px,5.4vw,58px);max-width:15em;letter-spacing:-.02em}
+.photo-wide{margin-top:52px}
+.photo-wide img{width:100%;height:clamp(240px,40vw,480px);object-fit:cover;object-position:center 40%;border-radius:6px;display:block}
+.photos{padding:56px 0;border-bottom:1px solid var(--rule)}
+.photo-pair{display:grid;grid-template-columns:1.35fr 1fr;gap:16px}
+.photo-pair img{width:100%;height:clamp(220px,30vw,380px);object-fit:cover;border-radius:6px;display:block}
+@media (max-width:700px){.photo-pair{grid-template-columns:1fr}.photo-pair img{height:240px}}
 </style>
 </head>
 <body>
@@ -142,6 +151,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       <a class="textlink" href="#workshops">See our workshops</a>
     </div>
     <p class="serve"><strong>We work with</strong> government agencies, school districts, colleges and universities, healthcare organizations, and companies.</p>
+    <div class="photo-wide">
+      <img src="https://images.unsplash.com/photo-1776039325185-8fd3d46af4e6?auto=format&fit=crop&q=75&w=1400" srcset="https://images.unsplash.com/photo-1776039325185-8fd3d46af4e6?auto=format&fit=crop&q=75&w=640 640w, https://images.unsplash.com/photo-1776039325185-8fd3d46af4e6?auto=format&fit=crop&q=75&w=960 960w, https://images.unsplash.com/photo-1776039325185-8fd3d46af4e6?auto=format&fit=crop&q=75&w=1400 1400w, https://images.unsplash.com/photo-1776039325185-8fd3d46af4e6?auto=format&fit=crop&q=75&w=1920 1920w" sizes="(max-width: 1040px) 100vw, 992px" alt="Participants listening during a professional training session" loading="eager" fetchpriority="high">
+    </div>
   </div>
 </section>
 
@@ -209,6 +221,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         <li><strong>Something to take back</strong><span>Each person leaves with one strategy for a real moment that week. You receive the participant evaluation results and a short summary.</span></li>
       </ul>
     </div>
+  </div>
+</section>
+
+<section class="photos">
+  <div class="wrap photo-pair">
+    <img src="https://images.unsplash.com/photo-1563457039413-0c39b8e8963d?auto=format&fit=crop&q=75&w=960" srcset="https://images.unsplash.com/photo-1563457039413-0c39b8e8963d?auto=format&fit=crop&q=75&w=640 640w, https://images.unsplash.com/photo-1563457039413-0c39b8e8963d?auto=format&fit=crop&q=75&w=960 960w, https://images.unsplash.com/photo-1563457039413-0c39b8e8963d?auto=format&fit=crop&q=75&w=1400 1400w, https://images.unsplash.com/photo-1563457039413-0c39b8e8963d?auto=format&fit=crop&q=75&w=1920 1920w" sizes="(max-width: 700px) 100vw, 580px" alt="A small group talking around a table during a workshop" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1623303647440-967d26b95b47?auto=format&fit=crop&q=75&w=960" srcset="https://images.unsplash.com/photo-1623303647440-967d26b95b47?auto=format&fit=crop&q=75&w=640 640w, https://images.unsplash.com/photo-1623303647440-967d26b95b47?auto=format&fit=crop&q=75&w=960 960w, https://images.unsplash.com/photo-1623303647440-967d26b95b47?auto=format&fit=crop&q=75&w=1400 1400w, https://images.unsplash.com/photo-1623303647440-967d26b95b47?auto=format&fit=crop&q=75&w=1920 1920w" sizes="(max-width: 700px) 100vw, 420px" alt="Workshop participants working through an exercise with notes and worksheets" loading="lazy">
   </div>
 </section>
 
@@ -348,7 +367,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <footer>
   <div class="wrap">
     <span>Expert Insights, LLC · Based in El Paso, Texas · Serving organizations nationwide</span>
-    <span><a href="websites/">Websites for small businesses</a> · © 2026</span>
+    <span><a href="websites/">Websites for small businesses</a> · Photos: <a href="https://unsplash.com">Unsplash</a> · © 2026</span>
   </div>
 </footer>
 
