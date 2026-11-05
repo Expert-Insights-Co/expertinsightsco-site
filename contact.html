@@ -1,6 +1,130 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8">
-<title>Moved</title>
-<meta http-equiv="refresh" content="0; url=websites/contact.html">
-<link rel="canonical" href="https://expertinsightsco.com/websites/contact.html">
-</head><body><p>This page has moved to <a href="websites/contact.html">expertinsightsco.com/websites/contact.html</a>.</p></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request a Proposal | Expert Insights</title>
+<meta name="description" content="Request a training proposal from Expert Insights: workshops and keynotes on leadership, well-being and decision-making, in person or virtual.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header>
+  <nav class="wrap nav" aria-label="Main">
+    <a href="index.html"><img src="assets/logo.png" alt="Expert Insights"></a>
+    <ul>
+      <li><a href="workshops.html">Workshops</a></li>
+      <li class="hide-sm"><a href="about.html">About</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+<section class="contact" id="contact">
+  <div class="wrap split">
+    <div>
+      <h1>Request a proposal</h1>
+    </div>
+    <div>
+      <p style="margin-top:0">Share a few details about your organization and training goals. We'll follow up to schedule a brief consultation, then provide a written proposal. Based in El Paso, Texas, working with organizations across the country.</p>
+      <form class="pform" id="proposal-form" novalidate>
+        <div><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div><label for="f-org">Organization</label><input id="f-org" name="organization" autocomplete="organization" required></div>
+        <div><label for="f-title">Your title <span class="opt">(optional)</span></label><input id="f-title" name="title" autocomplete="organization-title"></div>
+        <div><label for="f-topic">Topic</label>
+          <select id="f-topic" name="topic">
+            <option>Not sure yet</option>
+            <option>Leadership and working together</option>
+            <option>Well-being and stress</option>
+            <option>Judgment and decision-making</option>
+            <option>AI at work</option>
+            <option>A keynote for an event</option>
+            <option>Something else</option>
+          </select></div>
+        <div><label for="f-format">Format</label>
+          <select id="f-format" name="format"><option>Either</option><option>In person</option><option>Virtual</option></select></div>
+        <div><label for="f-size">Number of participants <span class="opt">(optional)</span></label><input id="f-size" name="participants" inputmode="numeric"></div>
+        <div><label for="f-when">Timeframe <span class="opt">(optional)</span></label><input id="f-when" name="timeframe" placeholder="e.g., spring 2027"></div>
+        <div class="full"><label for="f-msg">Training goals or context <span class="opt">(optional)</span></label><textarea id="f-msg" name="message"></textarea></div>
+        <input class="hp" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="full"><button type="submit">Send request</button></div>
+        <p class="formnote" id="form-note" role="status">Prefer email? Write to <a href="mailto:expertinsightsco@gmail.com">expertinsightsco@gmail.com</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap split">
+    <div>
+      <h2>How it works</h2>
+    </div>
+    <div>
+      <ol class="steps">
+        <li><strong>An initial conversation.</strong> We learn who will attend and what you want to change.</li>
+        <li><strong>A written proposal.</strong> You receive the agenda, format and fee for your review.</li>
+        <li><strong>The session.</strong> Delivered in person anywhere in the U.S., or virtually.</li>
+        <li><strong>Follow-up.</strong> We share the participant evaluation, a brief summary and recommended next steps.</li>
+      </ol>
+      <p class="formats">Keynotes run 60 to 90 minutes, workshops 2 to 4 hours, and series meet over several weeks. Public-sector and education rates are available.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Expert Insights, LLC · Based in El Paso, Texas · Serving organizations nationwide</span>
+    <span><a href="websites/">Websites for small businesses</a> · Photos: <a href="https://unsplash.com">Unsplash</a> · © 2026</span>
+  </div>
+</footer>
+<script>
+/* Proposal form. If FORM_KEY is set (a free Web3Forms access key), the form sends directly.
+   Without a key it opens the visitor's email app with the request written out. */
+(function () {
+  var FORM_KEY = "8b26d1af-966e-4284-a09e-70894e94cdda";
+  var TO = "expertinsightsco@gmail.com";
+  var f = document.getElementById("proposal-form");
+  var note = document.getElementById("form-note");
+  if (!f) return;
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var need = ["name", "email", "organization"];
+    for (var i = 0; i < need.length; i++) {
+      var el = f.elements[need[i]];
+      if (!el.value.trim()) { el.focus(); note.textContent = "Please add your " + ({name: "name", email: "work email", organization: "organization"})[need[i]] + "."; return; }
+    }
+    if (f.elements.botcheck.value) return;
+    var v = function (n) { return f.elements[n].value.trim(); };
+    var lines = [
+      "Name: " + v("name"), "Title: " + (v("title") || "-"), "Organization: " + v("organization"),
+      "Email: " + v("email"), "Topic: " + v("topic"), "Format: " + v("format"),
+      "Participants: " + (v("participants") || "-"), "Timeframe: " + (v("timeframe") || "-"),
+      "", v("message")
+    ];
+    var subject = "Training proposal request: " + v("organization");
+    if (FORM_KEY) {
+      note.textContent = "Sending...";
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({ access_key: FORM_KEY, subject: subject, from_name: "Expert Insights website", replyto: v("email"), botcheck: "", message: lines.join("\n") })
+      }).then(function (r) { return r.json(); }).then(function (d) {
+        if (d.success) { f.reset(); note.textContent = "Thank you. Your request has been received, and we'll follow up shortly."; }
+        else { throw new Error(); }
+      }).catch(function () { note.innerHTML = "Something went wrong. Please email us at <a href=\"mailto:" + TO + "\">" + TO + "</a>."; });
+      return;
+    }
+    window.location.href = "mailto:" + TO + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
+    note.innerHTML = "Your email application should open with your request prepared. Please select Send to complete your request. If nothing opens, email us at <a href=\"mailto:" + TO + "\">" + TO + "</a>.";
+  });
+})();
+</script>
+</body>
+</html>

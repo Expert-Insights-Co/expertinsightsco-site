@@ -9,159 +9,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --navy:#0B1D3A; --orange:#F47C20; --paper:#FBF8F3; --ink:#1B2537; --soft:#56627A; --rule:#DDD5C7;
-  --wrap:1040px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Montserrat',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
-a{color:var(--navy)}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-h1,h2,h3{color:var(--navy);font-weight:700;line-height:1.2;letter-spacing:-.01em}
-h1{font-size:clamp(32px,4.6vw,48px);max-width:16em}
-h2{font-size:clamp(24px,3vw,30px)}
-h3{font-size:18px}
-p{max-width:38em}
-.soft{color:var(--soft)}
-
-/* header */
-header{border-bottom:1px solid var(--rule)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
-.nav img{height:38px;width:auto;display:block}
-.nav ul{display:flex;gap:28px;list-style:none;font-size:15px;font-weight:500}
-.nav ul a{text-decoration:none}
-.nav ul a:hover{text-decoration:underline}
-@media (max-width:640px){.nav ul{gap:16px;font-size:14px}.nav ul li.hide-sm{display:none}}
-
-/* sections */
-section{padding:72px 0;border-bottom:1px solid var(--rule)}
-section:last-of-type{border-bottom:0}
-.intro{padding:88px 0 76px}
-.intro p{font-size:19px;margin-top:22px;color:var(--soft)}
-.actions{margin-top:32px;display:flex;flex-wrap:wrap;gap:24px;align-items:center}
-.button{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:14px 24px;border-radius:4px}
-.button:hover{background:#163059}
-.textlink{font-weight:600;text-decoration:underline;text-underline-offset:4px}
-.serve{margin-top:40px;font-size:15px;color:var(--soft)}
-.serve strong{color:var(--ink);font-weight:600}
-
-/* two-column section layout */
-.split{display:grid;grid-template-columns:260px 1fr;gap:48px}
-.split > div:first-child p{font-size:15px;color:var(--soft);margin-top:12px}
-@media (max-width:820px){.split{grid-template-columns:1fr;gap:20px}}
-
-/* workshop list */
-.list{}
-.item{padding:22px 0;border-bottom:1px solid var(--rule)}
-.item h3 a{text-decoration:none}
-.item p{margin-top:6px;color:var(--soft);font-size:16px}
-.item .fmt{display:block;margin-top:8px;font-size:13.5px;font-weight:600;color:var(--orange)}
-
-.list h3.group{font-size:14px;font-weight:600;color:var(--orange);padding:26px 0 4px;border-bottom:1px solid var(--rule)}
-.list h3.group:first-child{padding-top:0}
-.item p.leave{margin-top:8px;color:var(--ink);font-size:15.5px}
-.also{margin-top:24px;font-size:15.5px;color:var(--soft)}
-
-/* agenda */
-table{width:100%;border-collapse:collapse;font-size:16px}
-td{padding:12px 0;border-bottom:1px solid var(--rule);vertical-align:top}
-td:first-child{width:90px;color:var(--soft);font-weight:600}
-td span{display:block;color:var(--soft);font-size:15px}
-
-/* results */
-.results p.big{font-size:20px;color:var(--ink)}
-blockquote{margin-top:28px;padding-left:20px;border-left:3px solid var(--orange);font-size:18px;color:var(--ink);max-width:36em}
-blockquote cite{display:block;margin-top:6px;font-style:normal;font-size:14px;color:var(--soft)}
-
-/* steps */
-ol.steps{list-style:none;counter-reset:s}
-ol.steps li{counter-increment:s;padding:16px 0 16px 44px;border-bottom:1px solid var(--rule);position:relative}
-ol.steps li:first-child{border-top:1px solid var(--rule)}
-ol.steps li::before{content:counter(s);position:absolute;left:0;top:16px;font-weight:700;color:var(--orange)}
-ol.steps li strong{color:var(--navy)}
-.formats{margin-top:24px;font-size:15.5px;color:var(--soft)}
-
-/* people */
-.people{display:grid;grid-template-columns:1fr 1fr;gap:36px}
-.people p{font-size:15.5px;color:var(--soft);margin-top:6px}
-@media (max-width:700px){.people{grid-template-columns:1fr}}
-
-/* contact */
-.contact{background:var(--navy);color:#fff;border-bottom:0}
-.contact h2{color:#fff}
-.contact p{color:#C9D3E3;margin-top:14px}
-.contact a.mail{color:#fff;font-weight:600;font-size:20px;text-underline-offset:5px}
-.contact .button{background:var(--orange)}
-.contact .button:hover{background:#dc6c14}
-footer{padding:28px 0 40px;font-size:14px;color:var(--soft)}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
-
-/* outcomes */
-.outcomes{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:28px 40px}
-.outcomes li h3{font-size:18px}
-.outcomes li p{margin-top:6px;color:var(--soft);font-size:16px}
-@media (max-width:700px){.outcomes{grid-template-columns:1fr}}
-.orgs{margin-top:28px;font-size:15.5px;color:var(--soft)}
-.orgs strong{color:var(--ink);font-weight:600}
-
-/* problems */
-.problems{list-style:none;border-top:1px solid var(--rule)}
-.problems li{padding:16px 0 16px 28px;border-bottom:1px solid var(--rule);position:relative;font-size:16.5px}
-.problems li::before{content:"";position:absolute;left:4px;top:27px;width:10px;height:2px;background:var(--orange)}
-.closing{margin-top:22px;font-size:17px;color:var(--ink)}
-/* approach */
-.approach{display:grid;grid-template-columns:320px 1fr;gap:44px;align-items:center}
-.approach svg{width:100%;max-width:320px;height:auto;display:block}
-.approach .caption{font-size:14px;color:var(--soft);margin-top:10px;max-width:320px}
-.points{list-style:none}
-.points li{padding:14px 0;border-bottom:1px solid var(--rule)}
-.points li:first-child{border-top:1px solid var(--rule)}
-.points li strong{display:block;color:var(--navy);font-size:17px}
-.points li span{color:var(--soft);font-size:16px}
-@media (max-width:860px){.approach{grid-template-columns:1fr}}
-
-/* photos */
-.intro h1{font-size:clamp(34px,5.4vw,58px);max-width:15em;letter-spacing:-.02em}
-.photo-wide{margin-top:52px}
-.photo-wide img{width:100%;height:clamp(240px,40vw,480px);object-fit:cover;object-position:center 40%;border-radius:6px;display:block}
-.photos{padding:56px 0;border-bottom:1px solid var(--rule)}
-.photo-pair{display:grid;grid-template-columns:1.35fr 1fr;gap:16px}
-.photo-pair img{width:100%;height:clamp(220px,30vw,380px);object-fit:cover;border-radius:6px;display:block}
-@media (max-width:700px){.photo-pair{grid-template-columns:1fr}.photo-pair img{height:240px}}
-
-/* proof line, jump links */
-.proofline{margin-top:28px;padding:18px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);font-size:15.5px;color:var(--ink);max-width:none}
-.proofline strong{color:var(--navy)}
-.jump{margin-top:16px;font-size:15px;line-height:2}
-.jump a{font-weight:600;margin-right:14px;text-underline-offset:4px}
-
-/* proposal form */
-.pform{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:14px 18px}
-.pform label{display:block;font-size:13.5px;font-weight:600;color:#C9D3E3;margin-bottom:6px}
-.pform .full{grid-column:1 / -1}
-.pform input,.pform select,.pform textarea{width:100%;font:inherit;font-size:15.5px;color:var(--ink);background:#fff;border:1px solid #2A3E63;border-radius:4px;padding:11px 12px}
-.pform textarea{min-height:110px;resize:vertical}
-.pform input:focus,.pform select:focus,.pform textarea:focus{outline:2px solid var(--orange);outline-offset:1px}
-.pform .opt{font-weight:400;color:#9FB0CB}
-.pform button{font:inherit;font-weight:600;font-size:16px;background:var(--orange);color:#fff;border:0;border-radius:4px;padding:14px 26px;cursor:pointer}
-.pform button:hover{background:#dc6c14}
-.formnote{grid-column:1 / -1;font-size:14px;color:#C9D3E3;margin-top:2px}
-.formnote a{color:#fff}
-.hp{position:absolute;left:-9999px}
-@media (max-width:640px){.pform{grid-template-columns:1fr}}
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-
 <header>
   <nav class="wrap nav" aria-label="Main">
-    <a href="#top"><img src="assets/logo.png" alt="Expert Insights"></a>
+    <a href="index.html"><img src="assets/logo.png" alt="Expert Insights"></a>
     <ul>
-      <li><a href="#workshops">Workshops</a></li>
-      <li class="hide-sm"><a href="#how">How it works</a></li>
-      <li class="hide-sm"><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="workshops.html">Workshops</a></li>
+      <li class="hide-sm"><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
@@ -173,8 +30,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     <h1>Expertise gets people hired. The human side decides what happens next.</h1>
     <p>Expert Insights brings practical, research-grounded professional development to organizations: leadership and teamwork, well-being and stress, judgment and decision-making, and working well with AI. Our keynotes, workshops and multi-session series are developed and delivered by two professors who teach and research these subjects, in person anywhere in the U.S. or virtually.</p>
     <div class="actions">
-      <a class="button" href="#contact">Request a proposal</a>
-      <a class="textlink" href="#workshops">See our workshops</a>
+      <a class="button" href="contact.html">Request a proposal</a>
+      <a class="textlink" href="workshops.html">See our workshops</a>
     </div>
     <p class="serve"><strong>We work with</strong> government agencies, school districts, colleges and universities, healthcare organizations, and companies.</p>
     <p class="proofline"><strong>12 sessions</strong> delivered for El Paso County, Texas, government employees. <strong>4.8 out of 5</strong> from educators in our November 2025 Emotional Intelligence for Leaders workshop, where all 18 participants left with a strategy they could use right away. Recent audiences include El Paso County, New Mexico State University, El Paso Community College, the Border Learning Conference and New Mexico AMP.</p>
@@ -272,51 +129,15 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   </div>
 </section>
 
-<section id="workshops">
-  <div class="wrap split">
-    <div>
-      <h2>Workshops</h2>
-      <p>Each one can run as a keynote, a workshop or a series. Each can be tailored to your organization's goals, or we can develop a session on a topic not listed here.</p>
-      <p class="jump"><a href="#g-leadership">Leadership</a><a href="#g-wellbeing">Well-being</a><a href="#g-decisions">Decision-making</a><a href="#g-keynotes">Special topics</a></p>
-    </div>
-    <div>
-      <div class="list">
-        <h3 class="group" id="g-leadership">Leadership and working together</h3>
-        <div class="item"><h3>Thriving Teams</h3><p>Supervisors can't hand out motivation, but they can build the conditions for it. Drawing on decades of motivation research, this session looks at what keeps people engaged: some control over how they do their work, the chance to keep getting better at it, and real connection with the people around them.</p><p class="leave">Supervisors leave with specific changes to how they assign work, give feedback and run meetings.</p><span class="fmt">Workshop · Series</span></div>
-        <div class="item"><h3>Emotional Intelligence for Leaders</h3><p>Strong technical skills get people into leadership; how they handle themselves and others decides how they perform there. This workshop builds the everyday skills behind steady leadership: recognizing what you're feeling and why, staying composed under pressure, reading what's happening on your team, and handling difficult conversations.</p><p class="leave">Participants take a self-assessment, practice each skill with realistic scenarios, and leave with a plan for one real situation they're facing.</p><span class="fmt">Keynote · Workshop · Series</span></div>
-        <div class="item"><h3>The Multigenerational Workplace</h3><p>Many teams now span several generations, each with different habits around communication, feedback and technology. This session moves past stereotypes to what actually helps: understanding where the differences come from and adjusting how you communicate.</p><p class="leave">Teams leave with ways to pair long experience with newer skills, including team and reverse mentoring.</p><span class="fmt">Workshop · Series</span></div>
-        <div class="item"><h3>Service Excellence</h3><p>For staff who work with the public, the hardest part of the job is often the interaction, not the task. This session focuses on staying calm with upset or demanding people, setting clear expectations, and responding consistently.</p><p class="leave">Participants practice real situations from their own front lines, including how to recover after a hard exchange so it doesn't carry into the next one.</p><span class="fmt">Workshop · Series</span></div>
-        <h3 class="group" id="g-wellbeing">Well-being</h3>
-        <div class="item"><h3>The Science of Happiness at Work</h3><p>Most of us are surprisingly bad at predicting what will make us happy: the raise, the title and the new purchase fade faster than we expect. This session walks through what the research actually shows, including how much the quality of our relationships matters.</p><p class="leave">Participants leave with simple, evidence-based practices they can start that week, such as noticing what went well and using their strengths more at work.</p><span class="fmt">Keynote · Workshop · Series</span></div>
-        <div class="item"><h3>Stress Less, Work Happy</h3><p>Stress affects sleep, health, judgment and how people treat one another at work. This session explains in plain language what stress does to the body and mind, then turns to what helps.</p><p class="leave">Participants leave with small daily habits, ways to recover during a demanding day, and ideas for how a team can lower stress for each other.</p><span class="fmt">Keynote · Workshop</span></div>
-        <div class="item"><h3>Beyond Balance: Work and Life</h3><p>A perfect balance between work and home is rarely realistic. This session focuses on integration instead: boundaries that hold, healthy ways of coping when work and home both make heavy demands, and recovering from hard weeks before they turn into burnout.</p><p class="leave">Participants leave with a personal plan for one boundary and one recovery habit.</p><span class="fmt">Keynote · Workshop</span></div>
-        <h3 class="group" id="g-decisions">Judgment and decision-making</h3>
-        <div class="item"><h3>How Good Decisions Get Made</h3><p>Our minds make quick judgments all day, usually without our noticing, and most of the time that serves us well. Through live exercises such as the anchoring experiment, participants see common thinking traps in action. The emphasis is on normal human functioning, not blame.</p><p class="leave">Teams leave with simple habits for slowing down and checking their thinking when a decision really matters.</p><span class="fmt">Keynote · Workshop</span></div>
-        <div class="item"><h3>Conformity and Obedience</h3><p>Why do good people sometimes go along with decisions they know are wrong? Drawing on classic research in social psychology, this session looks at how group pressure and authority shape what people do.</p><p class="leave">Leaders leave with practical ways to build a workplace where people speak up before small problems become big ones.</p><span class="fmt">Keynote · Workshop</span></div>
-        <h3 class="group" id="g-keynotes">Special topics</h3>
-        <div class="item"><h3>Leading Humans in the Age of AI</h3><p>As AI takes on more analytical work, the skills that stay human, such as judgment, trust and emotional intelligence, matter more. What that means for leaders and teams right now.</p><span class="fmt">Keynote · Workshop</span></div>
-        <div class="item"><h3>Leveraging AI at Work</h3><p>A hands-on session on practical, everyday uses of AI tools for drafting, summarizing, analysis and planning, along with the privacy questions to ask before anyone puts work information into them.</p><span class="fmt">Workshop</span></div>
-        <div class="item"><h3>Behind the Mask</h3><p>What research tells us about psychopathy, how it differs from the movie version, and why understanding it matters in workplaces and communities.</p><span class="fmt">Keynote</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section>
   <div class="wrap split">
     <div>
-      <h2>What a session looks like</h2>
-      <p>Agendas vary by topic and audience. Here's the shape of a typical two-hour workshop.</p>
+      <h2>Workshops</h2>
+      <p>Twelve topics, each available as a keynote, a workshop or a series, and tailored to your organization.</p>
+      <p style="margin-top:16px"><a class="textlink" href="workshops.html">See all workshops</a></p>
     </div>
-    <div>
-      <table>
-        <tr><td>10 min</td><td>Opening<span>A question drawn from participants' own work</span></td></tr>
-        <tr><td>20 min</td><td>The idea<span>What the research shows, in plain language</span></td></tr>
-        <tr><td>15 min</td><td>Self-check<span>A short self-assessment or reflection</span></td></tr>
-        <tr><td>35 min</td><td>Practice<span>Role-plays, exercises or real scenarios from your workplace</span></td></tr>
-        <tr><td>25 min</td><td>Applying it<span>Small-group discussion about your organization</span></td></tr>
-        <tr><td>15 min</td><td>Commitment<span>One strategy for a real moment this week</span></td></tr>
-      </table>
+    <div class="teaser">
+      <div><h3>Leadership and working together</h3><ul><li>Thriving Teams</li><li>Emotional Intelligence for Leaders</li><li>The Multigenerational Workplace</li><li>Service Excellence</li></ul></div><div><h3>Well-being</h3><ul><li>The Science of Happiness at Work</li><li>Stress Less, Work Happy</li><li>Beyond Balance: Work and Life</li></ul></div><div><h3>Judgment and decision-making</h3><ul><li>How Good Decisions Get Made</li><li>Conformity and Obedience</li></ul></div><div><h3>Special topics</h3><ul><li>Leading Humans in the Age of AI</li><li>Leveraging AI at Work</li><li>Behind the Mask</li></ul></div>
     </div>
   </div>
 </section>
@@ -334,77 +155,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   </div>
 </section>
 
-<section id="how">
-  <div class="wrap split">
+<section class="cta">
+  <div class="wrap">
     <div>
-      <h2>How it works</h2>
+      <h2>Planning training for your team?</h2>
+      <p>Share a few details and we'll follow up with a written proposal.</p>
     </div>
-    <div>
-      <ol class="steps">
-        <li><strong>An initial conversation.</strong> We learn who will attend and what you want to change.</li>
-        <li><strong>A written proposal.</strong> You receive the agenda, format and fee for your review.</li>
-        <li><strong>The session.</strong> Delivered in person anywhere in the U.S., or virtually.</li>
-        <li><strong>Follow-up.</strong> We share the participant evaluation, a brief summary and recommended next steps.</li>
-      </ol>
-      <p class="formats">Keynotes run 60 to 90 minutes, workshops 2 to 4 hours, and series meet over several weeks. Public-sector and education rates are available.</p>
-    </div>
-  </div>
-</section>
-
-<section id="about">
-  <div class="wrap split">
-    <div>
-      <h2>About Expert Insights</h2>
-    </div>
-    <div>
-      <p>Expert Insights is a professional development company founded by two professors to bring the research they teach into the workplace. We work with public agencies, schools, universities, healthcare organizations and companies that want training grounded in evidence rather than motivation alone, and every engagement is designed around the people who will be in the room.</p>
-      <div class="people" style="margin-top:28px">
-        <div>
-          <h3>Professor René Guillaume, PhD</h3>
-          <p>Professor of Educational Leadership and Administration at New Mexico State University. Teaches a graduate course on emotional intelligence and researches how professionals advance in their organizations.</p>
-        </div>
-        <div>
-          <h3>Professor Nicholas Fernandez</h3>
-          <p>Professor of psychology with more than 30 years of teaching and professional development, focused on happiness, decision-making and how the mind works at work.</p>
-        </div>
-      </div>
-      <p class="soft" style="margin-top:24px;font-size:15.5px">They are also writing a practical book for working professionals, built on the same skills taught in these workshops.</p>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="wrap split">
-    <div>
-      <h2>Contact</h2>
-    </div>
-    <div>
-      <p style="margin-top:0">Share a few details about your organization and training goals. We'll follow up to schedule a brief consultation, then provide a written proposal. Based in El Paso, Texas, working with organizations across the country.</p>
-      <form class="pform" id="proposal-form" novalidate>
-        <div><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
-        <div><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-        <div><label for="f-org">Organization</label><input id="f-org" name="organization" autocomplete="organization" required></div>
-        <div><label for="f-title">Your title <span class="opt">(optional)</span></label><input id="f-title" name="title" autocomplete="organization-title"></div>
-        <div><label for="f-topic">Topic</label>
-          <select id="f-topic" name="topic">
-            <option>Not sure yet</option>
-            <option>Leadership and working together</option>
-            <option>Well-being and stress</option>
-            <option>Judgment and decision-making</option>
-            <option>AI at work</option>
-            <option>A keynote for an event</option>
-            <option>Something else</option>
-          </select></div>
-        <div><label for="f-format">Format</label>
-          <select id="f-format" name="format"><option>Either</option><option>In person</option><option>Virtual</option></select></div>
-        <div><label for="f-size">Number of participants <span class="opt">(optional)</span></label><input id="f-size" name="participants" inputmode="numeric"></div>
-        <div><label for="f-when">Timeframe <span class="opt">(optional)</span></label><input id="f-when" name="timeframe" placeholder="e.g., spring 2027"></div>
-        <div class="full"><label for="f-msg">Training goals or context <span class="opt">(optional)</span></label><textarea id="f-msg" name="message"></textarea></div>
-        <input class="hp" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="full"><button type="submit">Send request</button></div>
-        <p class="formnote" id="form-note" role="status">Prefer email? Write to <a href="mailto:expertinsightsco@gmail.com">expertinsightsco@gmail.com</a>.</p>
-      </form>
-    </div>
+    <a class="button" href="contact.html">Request a proposal</a>
   </div>
 </section>
 
@@ -416,48 +173,5 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     <span><a href="websites/">Websites for small businesses</a> · Photos: <a href="https://unsplash.com">Unsplash</a> · © 2026</span>
   </div>
 </footer>
-
-
-<script>
-/* Proposal form. If FORM_KEY is set (a free Web3Forms access key), the form sends directly.
-   Without a key it opens the visitor's email app with the request written out. */
-(function () {
-  var FORM_KEY = "8b26d1af-966e-4284-a09e-70894e94cdda";
-  var TO = "expertinsightsco@gmail.com";
-  var f = document.getElementById("proposal-form");
-  var note = document.getElementById("form-note");
-  if (!f) return;
-  f.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var need = ["name", "email", "organization"];
-    for (var i = 0; i < need.length; i++) {
-      var el = f.elements[need[i]];
-      if (!el.value.trim()) { el.focus(); note.textContent = "Please add your " + ({name: "name", email: "work email", organization: "organization"})[need[i]] + "."; return; }
-    }
-    if (f.elements.botcheck.value) return;
-    var v = function (n) { return f.elements[n].value.trim(); };
-    var lines = [
-      "Name: " + v("name"), "Title: " + (v("title") || "-"), "Organization: " + v("organization"),
-      "Email: " + v("email"), "Topic: " + v("topic"), "Format: " + v("format"),
-      "Participants: " + (v("participants") || "-"), "Timeframe: " + (v("timeframe") || "-"),
-      "", v("message")
-    ];
-    var subject = "Training proposal request: " + v("organization");
-    if (FORM_KEY) {
-      note.textContent = "Sending...";
-      fetch("https://api.web3forms.com/submit", {
-        method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({ access_key: FORM_KEY, subject: subject, from_name: "Expert Insights website", replyto: v("email"), botcheck: "", message: lines.join("\n") })
-      }).then(function (r) { return r.json(); }).then(function (d) {
-        if (d.success) { f.reset(); note.textContent = "Thank you. Your request has been received, and we'll follow up shortly."; }
-        else { throw new Error(); }
-      }).catch(function () { note.innerHTML = "Something went wrong. Please email us at <a href=\"mailto:" + TO + "\">" + TO + "</a>."; });
-      return;
-    }
-    window.location.href = "mailto:" + TO + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
-    note.innerHTML = "Your email application should open with your request prepared. Please select Send to complete your request. If nothing opens, email us at <a href=\"mailto:" + TO + "\">" + TO + "</a>.";
-  });
-})();
-</script>
 </body>
 </html>
