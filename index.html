@@ -135,6 +135,21 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .proofline strong{color:var(--navy)}
 .jump{margin-top:16px;font-size:15px;line-height:2}
 .jump a{font-weight:600;margin-right:14px;text-underline-offset:4px}
+
+/* proposal form */
+.pform{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:14px 18px}
+.pform label{display:block;font-size:13.5px;font-weight:600;color:#C9D3E3;margin-bottom:6px}
+.pform .full{grid-column:1 / -1}
+.pform input,.pform select,.pform textarea{width:100%;font:inherit;font-size:15.5px;color:var(--ink);background:#fff;border:1px solid #2A3E63;border-radius:4px;padding:11px 12px}
+.pform textarea{min-height:110px;resize:vertical}
+.pform input:focus,.pform select:focus,.pform textarea:focus{outline:2px solid var(--orange);outline-offset:1px}
+.pform .opt{font-weight:400;color:#9FB0CB}
+.pform button{font:inherit;font-weight:600;font-size:16px;background:var(--orange);color:#fff;border:0;border-radius:4px;padding:14px 26px;cursor:pointer}
+.pform button:hover{background:#dc6c14}
+.formnote{grid-column:1 / -1;font-size:14px;color:#C9D3E3;margin-top:2px}
+.formnote a{color:#fff}
+.hp{position:absolute;left:-9999px}
+@media (max-width:640px){.pform{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -373,9 +388,31 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       <h2>Contact</h2>
     </div>
     <div>
-      <p style="margin-top:0">Tell us who you'd like to train and what's going on. We'll set up a short call and follow up with a written proposal. Based in El Paso, Texas, working with organizations across the country.</p>
-      <p><a class="mail" href="mailto:expertinsightsco@gmail.com">expertinsightsco@gmail.com</a></p>
-      <div class="actions"><a class="button" href="mailto:expertinsightsco@gmail.com?subject=Training%20proposal%20request&amp;body=Hello%20Expert%20Insights%2C%0A%0AWe%27re%20interested%20in%20a%20training%20session.%0A%0AOrganization%3A%0AYour%20name%20and%20title%3A%0APhone%20%28optional%29%3A%0ATopic%28s%29%20of%20interest%3A%0AApproximate%20number%20of%20participants%20%28optional%29%3A%0APreferred%20timeframe%20%28optional%29%3A%0AIn%20person%20or%20virtual%3A%0A%0AAnything%20else%20we%20should%20know%3A%0A">Request a proposal</a></div>
+      <p style="margin-top:0">Tell us who you'd like to train and what's going on. We'll be in touch to set up a short call, then follow up with a written proposal. Based in El Paso, Texas, working with organizations across the country.</p>
+      <form class="pform" id="proposal-form" novalidate>
+        <div><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div><label for="f-org">Organization</label><input id="f-org" name="organization" autocomplete="organization" required></div>
+        <div><label for="f-title">Your title <span class="opt">(optional)</span></label><input id="f-title" name="title" autocomplete="organization-title"></div>
+        <div><label for="f-topic">Topic</label>
+          <select id="f-topic" name="topic">
+            <option>Not sure yet</option>
+            <option>Leadership and working together</option>
+            <option>Well-being and stress</option>
+            <option>Judgment and decision-making</option>
+            <option>AI at work</option>
+            <option>A keynote for an event</option>
+            <option>Something else</option>
+          </select></div>
+        <div><label for="f-format">Format</label>
+          <select id="f-format" name="format"><option>Either</option><option>In person</option><option>Virtual</option></select></div>
+        <div><label for="f-size">Number of participants <span class="opt">(optional)</span></label><input id="f-size" name="participants" inputmode="numeric"></div>
+        <div><label for="f-when">Timeframe <span class="opt">(optional)</span></label><input id="f-when" name="timeframe" placeholder="e.g., spring 2027"></div>
+        <div class="full"><label for="f-msg">What's going on <span class="opt">(optional)</span></label><textarea id="f-msg" name="message"></textarea></div>
+        <input class="hp" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="full"><button type="submit">Send request</button></div>
+        <p class="formnote" id="form-note" role="status">Prefer email? Write to <a href="mailto:expertinsightsco@gmail.com">expertinsightsco@gmail.com</a>.</p>
+      </form>
     </div>
   </div>
 </section>
@@ -389,5 +426,47 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   </div>
 </footer>
 
+
+<script>
+/* Proposal form. If FORM_KEY is set (a free Web3Forms access key), the form sends directly.
+   Without a key it opens the visitor's email app with the request written out. */
+(function () {
+  var FORM_KEY = "";
+  var TO = "expertinsightsco@gmail.com";
+  var f = document.getElementById("proposal-form");
+  var note = document.getElementById("form-note");
+  if (!f) return;
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var need = ["name", "email", "organization"];
+    for (var i = 0; i < need.length; i++) {
+      var el = f.elements[need[i]];
+      if (!el.value.trim()) { el.focus(); note.textContent = "Please add your " + ({name: "name", email: "work email", organization: "organization"})[need[i]] + "."; return; }
+    }
+    if (f.elements.botcheck.value) return;
+    var v = function (n) { return f.elements[n].value.trim(); };
+    var lines = [
+      "Name: " + v("name"), "Title: " + (v("title") || "-"), "Organization: " + v("organization"),
+      "Email: " + v("email"), "Topic: " + v("topic"), "Format: " + v("format"),
+      "Participants: " + (v("participants") || "-"), "Timeframe: " + (v("timeframe") || "-"),
+      "", v("message")
+    ];
+    var subject = "Training proposal request: " + v("organization");
+    if (FORM_KEY) {
+      note.textContent = "Sending...";
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({ access_key: FORM_KEY, subject: subject, from_name: "Expert Insights website", replyto: v("email"), message: lines.join("\n") })
+      }).then(function (r) { return r.json(); }).then(function (d) {
+        if (d.success) { f.reset(); note.textContent = "Thank you. We'll be in touch soon."; }
+        else { throw new Error(); }
+      }).catch(function () { note.innerHTML = "Something went wrong. Please email us at <a href=\"mailto:" + TO + "\">" + TO + "</a>."; });
+      return;
+    }
+    window.location.href = "mailto:" + TO + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
+    note.innerHTML = "Your email app should open with your request written out. Just press send. If nothing opens, email us at <a href=\"mailto:" + TO + "\">" + TO + "</a>.";
+  });
+})();
+</script>
 </body>
 </html>
