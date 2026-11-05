@@ -100,6 +100,22 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 @media (max-width:700px){.outcomes{grid-template-columns:1fr}}
 .orgs{margin-top:28px;font-size:15.5px;color:var(--soft)}
 .orgs strong{color:var(--ink);font-weight:600}
+
+/* problems */
+.problems{list-style:none;border-top:1px solid var(--rule)}
+.problems li{padding:16px 0 16px 28px;border-bottom:1px solid var(--rule);position:relative;font-size:16.5px}
+.problems li::before{content:"";position:absolute;left:4px;top:27px;width:10px;height:2px;background:var(--orange)}
+.closing{margin-top:22px;font-size:17px;color:var(--ink)}
+/* approach */
+.approach{display:grid;grid-template-columns:320px 1fr;gap:44px;align-items:center}
+.approach svg{width:100%;max-width:320px;height:auto;display:block}
+.approach .caption{font-size:14px;color:var(--soft);margin-top:10px;max-width:320px}
+.points{list-style:none}
+.points li{padding:14px 0;border-bottom:1px solid var(--rule)}
+.points li:first-child{border-top:1px solid var(--rule)}
+.points li strong{display:block;color:var(--navy);font-size:17px}
+.points li span{color:var(--soft);font-size:16px}
+@media (max-width:860px){.approach{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -119,13 +135,70 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
 <section class="intro">
   <div class="wrap">
-    <h1>Emotional intelligence and well-being training for organizations.</h1>
-    <p>Expert Insights helps organizations build the skills that decide how well people work together: emotional intelligence, well-being and sound decision-making. We deliver keynotes, half-day workshops and multi-session series, built around your staff, in person anywhere in the U.S. or virtually.</p>
+    <h1>Expertise gets people hired. The human side decides what happens next.</h1>
+    <p>Expert Insights trains teams in emotional intelligence, well-being and decision-making. Our keynotes, workshops and multi-session series are practical, grounded in research, and led by two professors, in person anywhere in the U.S. or virtually.</p>
     <div class="actions">
       <a class="button" href="#contact">Request a proposal</a>
       <a class="textlink" href="#workshops">See our workshops</a>
     </div>
     <p class="serve"><strong>We work with</strong> government agencies, school districts, colleges and universities, healthcare organizations, and companies.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <h2>Sound familiar?</h2>
+      <p>The situations our sessions are built for.</p>
+    </div>
+    <div>
+      <ul class="problems">
+        <li>A strong performer was promoted and now struggles to lead the people they used to work beside.</li>
+        <li>Meetings get tense, people go quiet, and the real issue never comes up.</li>
+        <li>Staff who serve the public all day are worn down and short with each other.</li>
+        <li>Capable people make rushed decisions under pressure and regret them later.</li>
+      </ul>
+      <p class="closing">None of these comes down to knowledge or effort. They come down to how people handle themselves and each other, and those are skills people can practice.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <h2>Our approach</h2>
+      <p>Built on Daniel Goleman's model of emotional intelligence and the RULER approach from the Yale Center for Emotional Intelligence.</p>
+    </div>
+    <div class="approach">
+      <figure>
+        <svg viewBox="0 0 400 400" role="img" aria-labelledby="dgTitle dgDesc">
+          <title id="dgTitle">Four areas of emotional intelligence</title>
+          <desc id="dgDesc">Four overlapping circles labeled self-awareness, self-management, social awareness and relationship management, meeting in the center at the words in real time.</desc>
+          <g fill="#0B1D3A" fill-opacity="0.06" stroke="#0B1D3A" stroke-opacity="0.4" stroke-width="1.5">
+            <circle cx="148" cy="148" r="112"/>
+            <circle cx="252" cy="148" r="112"/>
+            <circle cx="148" cy="252" r="112"/>
+            <circle cx="252" cy="252" r="112"/>
+          </g>
+          <g font-family="Montserrat, sans-serif" font-size="15" font-weight="600" fill="#0B1D3A" text-anchor="middle">
+            <text x="104" y="86">Self-</text><text x="104" y="104">awareness</text>
+            <text x="296" y="86">Self-</text><text x="296" y="104">management</text>
+            <text x="104" y="306">Social</text><text x="104" y="324">awareness</text>
+            <text x="296" y="306">Relationship</text><text x="296" y="324">management</text>
+          </g>
+          <circle cx="200" cy="200" r="44" fill="#F47C20"/>
+          <g font-family="Montserrat, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+            <text x="200" y="197">In real</text><text x="200" y="214">time</text>
+          </g>
+        </svg>
+        <figcaption class="caption">The four areas of emotional intelligence don't take turns. They work together in every conversation, which is why every session practices all four.</figcaption>
+      </figure>
+      <ul class="points">
+        <li><strong>Led by professors who teach this</strong><span>Our sessions are led by two professors who teach emotional intelligence, psychology and leadership.</span></li>
+        <li><strong>Practice, not lecture</strong><span>About every 20 minutes, participants do something: a self-assessment, a role-play, or a real scenario from their own workplace.</span></li>
+        <li><strong>Something to take back</strong><span>Each person leaves with one strategy for a real moment that week. You receive the participant evaluation results and a short summary.</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -236,12 +309,12 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     </div>
     <div class="people">
       <div>
-        <h3>René Guillaume, PhD</h3>
+        <h3>Professor René Guillaume, PhD</h3>
         <p>Professor of Educational Leadership and Administration at New Mexico State University. Teaches a graduate course on emotional intelligence and researches how professionals advance in their organizations.</p>
       </div>
       <div>
-        <h3>Nicholas Fernandez</h3>
-        <p>Psychology educator with more than 30 years of teaching and professional development, focused on happiness, decision-making and how the mind works at work.</p>
+        <h3>Professor Nicholas Fernandez</h3>
+        <p>Professor of psychology with more than 30 years of teaching and professional development, focused on happiness, decision-making and how the mind works at work.</p>
       </div>
     </div>
   </div>
